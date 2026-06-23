@@ -3,60 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martina &amp; Alejandro 💍</title>
+    <title>Martina & Alejandro 💍</title>
     <style>
-        /* Estilos elegantes y minimalistas */
+        /* Estilos sofisticados y adaptados a móvil */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #fcfbfa;
             color: #333;
             text-align: center;
         }
-        .hero {
-            background-color: #eae3d2; /* Tono beige/arena muy fino */
-            padding: 100px 20px;
-        }
-        h1 {
-            font-size: 2.8rem;
-            color: #5c5446;
-            margin-bottom: 10px;
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
             font-weight: normal;
+            color: #5c5446;
         }
+
+        .hero {
+            background-color: #eae3d2; /* Arena / Beige elegante */
+            padding: 100px 20px 80px 20px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 10px 0;
+        }
+
         .subtitulo {
             font-size: 1.1rem;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             color: #8c826e;
-            margin-bottom: 25px;
+            margin: 0;
         }
+
         .fecha {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: #5c5446;
             font-weight: bold;
             border-top: 1px solid #8c826e;
             border-bottom: 1px solid #8c826e;
             display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
+            padding: 12px 25px;
+            margin-top: 20px;
+            letter-spacing: 2px;
         }
+
+        /* CONTADOR */
+        .countdown-container {
+            margin: 40px auto 10px auto;
+            max-width: 500px;
+        }
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .time-box {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            min-width: 75px;
+        }
+        .time-box span {
+            display: block;
+            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            color: #5c5446;
+        }
+        .time-box label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8c826e;
+        }
+
         .seccion {
             padding: 60px 20px;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
         }
+
+        .seccion-alt {
+            background-color: #f5f2eb;
+        }
+
         h2 {
-            font-size: 1.8rem;
-            color: #5c5446;
-            font-weight: normal;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            position: relative;
         }
+        h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background-color: #8c826e;
+            margin: 10px auto 0 auto;
+        }
+
         p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            line-height: 1.7;
             color: #555;
+            font-weight: 300;
         }
+
         .boton {
             display: inline-block;
             background-color: #5c5446;
@@ -64,65 +126,287 @@
             padding: 14px 28px;
             text-decoration: none;
             border-radius: 4px;
-            font-weight: bold;
+            font-weight: 600;
             margin-top: 15px;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            transition: background 0.3s;
+            font-size: 0.9rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 1px solid #5c5446;
         }
         .boton:hover {
-            background-color: #736958;
+            background-color: transparent;
+            color: #5c5446;
         }
-        hr {
-            width: 30%;
-            border: 0;
-            border-top: 1px solid #eae3d2;
-            margin: 0 auto;
+
+        .boton-secundario {
+            background-color: transparent;
+            color: #5c5446;
+            border: 1px solid #8c826e;
+        }
+        .boton-secundario:hover {
+            background-color: #8c826e;
+            color: white;
+        }
+
+        /* MÚSICA FLOTANTE */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        .music-icon {
+            width: 35px;
+            height: 35px;
+            background: #5c5446;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+        }
+        .music-text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #5c5446;
+            padding-right: 10px;
+        }
+
+        /* FORMULARIO RSVP INTEGRADO */
+        .form-rsvp {
+            text-align: left;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            margin-top: 30px;
+            border: 1px solid #eee;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #5c5446;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #8c826e;
         }
     </style>
 </head>
 <body>
 
-    <!-- PORTADA -->
-    <div class="hero">
-        <p class="subtitulo">¡Nos casamos!</p>
-        <h1>Martina &amp; Alejandro</h1>
-        <div class="fecha">14 . Noviembre . 2026</div>
+    <div class="music-player" id="musicPlayer" onclick="toggleMusic()">
+        <div class="music-icon" id="musicIcon">🎵</div>
+        <div class="music-text" id="musicText">REPRODUCIR MÚSICA</div>
+        <audio id="bgMusic" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Tu navegador no soporta audio.
+        </audio>
     </div>
 
-    <!-- UBICACIÓN CEREMONIA -->
+    <div class="hero">
+        <p class="subtitulo">¡Nos casamos!</p>
+        <h1>Martina & Alejandro</h1>
+        <div class="fecha">14 . Noviembre . 2026</div>
+
+        <div class="countdown-container">
+            <div class="countdown">
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <label>Días</label>
+                </div>
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <label>Horas</label>
+                </div>
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <label>Min</label>
+                </div>
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <label>Seg</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="seccion">
         <h2>⛪ La Ceremonia</h2>
         <p>Nos encantaría que nos acompañes en el momento del "sí, quiero".</p>
         <p><strong>Hora:</strong> 11:00 h</p>
         <p><strong>Lugar:</strong> Parroquia de Santa Maria del Remei</p>
         <p>Plaça de Concòrdia, 1, Les Corts, Barcelona</p>
-        
         <a href="https://www.google.com/maps/place/Santa+Maria+del+Remei/@41.3869523,2.1293641,17z/data=!3m2!4b1!5s0x12a4986470f03591:0x188a60326ff3e57!4m6!3m5!1s0x12a4986470b187e5:0x33ded651afa322c4!8m2!3d41.3869483!4d2.131939!16s%2Fg%2F11bc71k821" target="_blank" class="boton">Cómo llegar a la Iglesia</a>
     </div>
 
-    <hr>
-
-    <!-- UBICACIÓN FIESTA -->
-    <div class="seccion">
+    <div class="seccion seccion-alt">
         <h2>🏡 El Convite y la Fiesta</h2>
         <p>Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar hasta que el cuerpo aguante.</p>
         <p><strong>Lugar:</strong> Masia Rosàs</p>
         <p>Carrer de la Masia Rosàs, 08197 Valldoreix, Sant Cugat del Vallès, Barcelona</p>
-        
         <a href="https://www.google.com/maps/place/Masia+Ros%C3%A0s/@41.4592325,2.0626677,17z/data=!3m1!4b1!4m6!3m5!1s0x12a490d4a53b35fd:0x3327e6eb1d7612b4!8m2!3d41.4592285!4d2.0652426!16s%2Fg%2F1wjsphwy" target="_blank" class="boton">Cómo llegar a la Masia</a>
     </div>
 
-    <hr>
-
-    <!-- CONFIRMACIÓN (RSVP) -->
     <div class="seccion">
-        <h2>💌 Confirmación de Asistencia</h2>
-        <p>Para ayudarnos a organizar todo mejor, por favor confímanos si podrás venir lo antes posible.</p>
-        
-        <!-- Recuerda cambiar el 34600000000 por tu número real -->
-        <a href="https://wa.me/34600000000?text=%C2%A1Hola!%20Queremos%20confirmar%20nuestra%20asistencia%20a%20la%20boda%20de%20Martina%20y%20Alejandro%20%F0%9F%A5%82" target="_blank" class="boton">Confirmar por WhatsApp</a>
+        <h2>🚌 Servicio de Autobús</h2>
+        <p>Queremos que disfrutes de la fiesta al máximo y no te preocupes por el coche. Pondremos a vuestra disposición un servicio de autobús para el traslado.</p>
+        <p><strong>Ida:</strong> Salida desde Barcelona (punto por confirmar) hacia la Masia Rosàs tras finalizar la ceremonia.</p>
+        <p><strong>Vuelta:</strong> Habrá diferentes horarios de regreso desde la Masia de vuelta a Barcelona durante la madrugada.</p>
+        <p><em>* Recuerda indicarnos en el formulario de abajo si vas a usar este servicio para reservar tu plaza.</em></p>
     </div>
 
+    <div class="seccion seccion-alt">
+        <h2>📸 Comparte tus Fotos</h2>
+        <p>¡Queremos guardar todos los recuerdos de este gran día! Ayúdanos subiendo todas las fotos y vídeos que hagas durante la boda a nuestro álbum digital compartido.</p>
+        <a href="http://googleusercontent.com/drive.google.com/0" target="_blank" class="boton boton-secundario">Subir Fotos al Álbum</a>
+    </div>
+
+    <div class="seccion">
+        <h2>💌 Confirmación de Asistencia</h2>
+        <p>Por favor, rellena el siguiente formulario para ayudarnos a organizarlo todo. ¡Nos vemos muy pronto!</p>
+
+        <form class="form-rsvp" id="rsvpForm" onsubmit="enviarRSVP(event)">
+            <div class="form-group">
+                <label for="nombre">Nombre y Apellidos:</label>
+                <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+
+            <div class="form-group">
+                <label for="asistencia">¿Podrás asistir?</label>
+                <select id="asistencia" required onchange="checkAsistencia(this.value)">
+                    <option value="">Selecciona una opción...</option>
+                    <option value="Sí, asistiré con mucho gusto">Sí, ¡allí estaré!</option>
+                    <option value="No podré asistir">Lamentablemente no podré ir</option>
+                </select>
+            </div>
+
+            <div id="detallesAsistencia">
+                <div class="form-group">
+                    <label for="acompanantes">¿Cuántos seréis en total? (Contándote a ti):</label>
+                    <input type="number" id="acompanantes" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="autobus">¿Haréis uso del autobús?</label>
+                    <select id="autobus">
+                        <option value="No necesito autobús">No, iré por mi cuenta</option>
+                        <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
+                        <option value="Sólo Ida">Sólo Ida</option>
+                        <option value="Sólo Vuelta">Sólo Vuelta</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="alergias">¿Alguna intolerancia, alergia o menú especial (Vegano/Celíaco)?</label>
+                    <textarea id="alergias" rows="3" placeholder="Ej: Celíaco, intolerancia a la lactosa, menú vegano... Si no tenéis, déjalo en blanco."></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="boton" style="width: 100%; cursor: pointer;">Enviar Confirmación</button>
+        </form>
+    </div>
+
+    <script>
+        // 1. CONFIGURACIÓN DE LA CUENTA ATRÁS
+        const targetDate = new Date("November 14, 2026 11:00:00").getTime();
+
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+
+            if (difference < 0) {
+                clearInterval(countdownInterval);
+                document.querySelector(".countdown-container").innerHTML = "<h3>¡Llegó el gran día! 🎉</h3>";
+            }
+        }, 1000);
+
+        // 2. CONTROL DE LA MÚSICA
+        function toggleMusic() {
+            const audio = document.getElementById("bgMusic");
+            const icon = document.getElementById("musicIcon");
+            const text = document.getElementById("musicText");
+
+            if (audio.paused) {
+                audio.play().catch(e => console.log("La reproducción requiere interacción previa del usuario."));
+                icon.innerText = "⏸️";
+                text.innerText = "PAUSAR MÚSICA";
+            } else {
+                audio.pause();
+                icon.innerText = "🎵";
+                text.innerText = "REPRODUCIR MÚSICA";
+            }
+        }
+
+        // Mostrar u ocultar preguntas si asiste o no
+        function checkAsistencia(val) {
+            const detalles = document.getElementById("detallesAsistencia");
+            if (val === "No podré asistir") {
+                detalles.style.display = "none";
+            } else {
+                detalles.style.display = "block";
+            }
+        }
+
+        // 3. ENVÍO DEL FORMULARIO DIRECTO A TU WHATSAPP
+        function enviarRSVP(event) {
+            event.preventDefault();
+            
+            // ⚠️ MODIFICA ESTO: Pon aquí tu número de móvil real con el 34 delante si es de España
+            const telefonoBoda = "34600000000"; 
+
+            const nombre = document.getElementById("nombre").value;
+            const asistencia = document.getElementById("asistencia").value;
+            
+            let mensaje = `*Confirmación de Boda (Web)* 💍%0A%0A`;
+            mensaje += `*Nombre:* ${nombre}%0A`;
+            mensaje += `*Asistencia:* ${asistencia}%0A`;
+
+            if (asistencia !== "No podré asistir") {
+                const acompanantes = document.getElementById("acompanantes").value;
+                const autobus = document.getElementById("autobus").value;
+                const alergias = document.getElementById("alergias").value || "Ninguna";
+
+                mensaje += `*Total Personas:* ${acompanantes}%0A`;
+                mensaje += `*Autobús:* ${autobus}%0A`;
+                mensaje += `*Alergias/Menú:* ${alergias}%0A`;
+            }
+
+            window.open(`https://wa.me/${telefonoBoda}?text=${mensaje}`, '_blank');
+        }
+    </script>
 </body>
 </html>
