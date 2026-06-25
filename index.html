@@ -6,7 +6,7 @@
     <title>Martina & Alejandro 💍</title>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Montserrat:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Montserrat:wght=300;400;600&display=swap');
     </style>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -29,16 +29,17 @@
             color: #5c5446;
         }
 
-        /* 1. PANTALLA DE BIENVENIDA (SPLASH) */
+        /* 1. PANTALLA DE BIENVENIDA (SPLASH) - ULTRA OPTIMIZADA */
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover no-repeat;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
-            z-index: 9999;
+            z-index: 99999; /* Máxima prioridad visual */
             color: white;
-            transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.8s ease;
+            opacity: 1;
+            transition: opacity 0.5s ease, visibility 0.5s;
         }
         #splash-screen h1 { color: white; font-size: 3rem; margin-bottom: 5px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         #splash-screen p { font-size: 1.2rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 30px; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
@@ -146,7 +147,7 @@
     <div id="splash-screen">
         <h1>Martina & Alejandro</h1>
         <p>14 . 11 . 2026</p>
-        <button class="btn-entrar" onclick="entrarWeb()">Escuchar e Invitar</button>
+        <button class="btn-entrar" onclick="entrarWeb()">Ingresar a la Invitación</button>
     </div>
 
     <audio id="bgMusic" loop>
@@ -174,14 +175,14 @@
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
         <p data-aos="fade-up" data-aos-delay="200">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
         <p data-aos="fade-up" data-aos-delay="300"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
-        <a href="https://www.google.com/maps/place/Santa+Maria+del+Remei/@41.3869523,2.1293641,17z/data=!3m2!4b1!5s0x12a4986470f03591:0x188a60326ff3e57!4m6!3m5!1s0x12a4986470b187e5:0x33ded651afa322c4!8m2!3d41.3869483!4d2.131939!16s%2Fg%2F11bc71k821?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D1" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
+        <a href="https://www.google.com/maps/place/Santa+Maria+del+Remei/@41.3869523,2.1293641,17z/data=!3m2!4b1!5s0x12a4986470f03591:0x188a60326ff3e57!4m6!3m5!1s0x12a4986470b187e5:0x33ded651afa322c4!8m2!3d41.3869483!4d2.131939!16s%2Fg%2F11bc71k821?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D4" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
     </div>
 
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
         <p data-aos="fade-up" data-aos-delay="200">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
         <p data-aos="fade-up" data-aos-delay="300"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
-        <a href="https://www.google.com/maps/place/Santa+Maria+del+Remei/@41.3869523,2.1293641,17z/data=!3m2!4b1!5s0x12a4986470f03591:0x188a60326ff3e57!4m6!3m5!1s0x12a4986470b187e5:0x33ded651afa322c4!8m2!3d41.3869483!4d2.131939!16s%2Fg%2F11bc71k821?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D2" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
+        <a href="https://www.google.com/maps/place/Santa+Maria+del+Remei/@41.3869523,2.1293641,17z/data=!3m2!4b1!5s0x12a4986470f03591:0x188a60326ff3e57!4m6!3m5!1s0x12a4986470b187e5:0x33ded651afa322c4!8m2!3d41.3869483!4d2.131939!16s%2Fg%2F11bc71k821?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D5" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
     </div>
 
     <div class="franja franja-oscura">
@@ -193,7 +194,7 @@
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
         <p data-aos="fade-up" data-aos-delay="200">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
-        <a href="http://googleusercontent.com/photos.google.com/13" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Subir Fotos al Álbum</a>
+        <a href="http://googleusercontent.com/photos.google.com/16" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Subir Fotos al Álbum</a>
     </div>
 
     <div class="franja franja-arena">
@@ -248,30 +249,29 @@
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // MEJORA CRÍTICA: Función a prueba de fallos para levantar la pantalla siempre
+        // SOLUCIÓN RADICAL: Quita la pantalla inmediatamente sin importar nada más
         function entrarWeb() {
             const splash = document.getElementById('splash-screen');
             
-            // 1. Quitar la pantalla visualmente de inmediato
+            // 1. Forzar desaparición inmediata
             splash.style.opacity = '0';
+            splash.style.pointerEvents = 'none'; // Evita clics fantasma
+            
             setTimeout(() => {
                 splash.style.display = 'none';
                 document.getElementById('musicPlayer').style.display = 'flex';
-            }, 800);
+            }, 500);
             
-            // 2. Intentar reproducir audio de forma segura. Si falla o se bloquea, el código no se rompe.
-            try {
-                const audio = document.getElementById("bgMusic");
-                let playPromise = audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.catch(error => {
-                        console.log("Reproducción automática bloqueada por el navegador. El usuario debe activar la música manualmente.");
+            // 2. Intentar audio por separado (si falla, no interrumpe el paso 1)
+            setTimeout(() => {
+                try {
+                    const audio = document.getElementById("bgMusic");
+                    audio.play().catch(err => {
+                        console.log("Audio en espera del usuario");
                         document.getElementById("musicIcon").innerText = "🎵";
                     });
-                }
-            } catch (e) {
-                console.log("Error de audio controlado:", e);
-            }
+                } catch(e) {}
+            }, 100);
         }
 
         function toggleMusic() {
