@@ -237,6 +237,11 @@
                     <textarea name="alergias" id="alergias" rows="2" placeholder="Ej: Celíaco, Vegano..."></textarea>
                 </div>
             </div>
+
+            <div class="form-group">
+                <label>🎵 ¿Qué canción no puede faltar en la fiesta?</label>
+                <input type="text" name="cancion" id="cancion" placeholder="Artista - Título de la canción">
+            </div>
             
             <button type="submit" id="btn-enviar" class="boton" style="width: 100%;">Confirmar Asistencia</button>
             
@@ -279,9 +284,8 @@
             document.getElementById("detallesAsistencia").style.display = (val === "No podré asistir") ? "none" : "block";
         }
 
-        // NUEVA FUNCIÓN DE ENVÍO ULTRA SEGURO POR FONDO (FETCH)
         function enviarFormulario(event) {
-            event.preventDefault(); // Detiene el envío antiguo que fallaba
+            event.preventDefault();
             
             const boton = document.getElementById("btn-enviar");
             const estado = document.getElementById("mensaje-estado");
@@ -290,26 +294,25 @@
             boton.innerText = "Enviando respuesta...";
             boton.disabled = true;
             
-            // Tu URL exacta de Google Apps Script
             const urlScript = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec";
             
-            // Recoger los datos de los inputs de forma limpia
-            const formData = new FormData(form);
+            const datos = new URLSearchParams(new FormData(form));
             
-            // Enviar los datos en segundo plano de forma asíncrona
             fetch(urlScript, {
                 method: 'POST',
-                body: formData,
-                mode: 'no-cors' // Requisito esencial para que Google acepte peticiones desde otras webs ajenas
+                body: datos.toString(),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                mode: 'no-cors'
             })
             .then(() => {
-                // ÉXITO COMPLETO: Los datos entraron al Excel
                 estado.innerText = "¡Muchas gracias! Tu respuesta se ha guardado correctamente. ✨";
                 estado.className = "exito";
                 estado.style.display = "block";
                 boton.innerText = "¡Confirmado!";
                 form.reset();
-                document.getElementById("detallesAsistencia").style.display = "block"; // Reset visual
+                document.getElementById("detallesAsistencia").style.display = "block";
             })
             .catch((error) => {
                 console.error("Error:", error);
