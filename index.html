@@ -6,7 +6,7 @@
     <title>Martina & Alejandro 💍</title>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Montserrat:wght@300;400;600&display=swap');
     </style>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -100,18 +100,18 @@
 
         p { font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 600px; font-weight: 300; }
 
-        /* BOTONES */
+        /* BOTONES CORREGIDOS */
         .boton {
-            display: inline-block; background-color: #5c5446; color: white;
+            display: inline-block; background-color: #5c5446; color: white !important;
             padding: 14px 32px; text-decoration: none; border-radius: 4px;
             font-weight: 600; margin-top: 20px; font-size: 0.9rem;
             letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.3s;
-            border: 1px solid #5c5446; text-shadow: none;
+            border: 1px solid #5c5446; cursor: pointer;
         }
-        .boton:hover { background-color: transparent; color: #5c5446; }
+        .boton:hover { background-color: transparent; color: #5c5446 !important; }
         
-        .franja-oscura .boton { background-color: #fcfbfa; color: #5c5446; border-color: #fcfbfa; }
-        .franja-oscura .boton:hover { background-color: transparent; color: #fcfbfa; }
+        .franja-oscura .boton { background-color: #fcfbfa; color: #5c5446 !important; border-color: #fcfbfa; }
+        .franja-oscura .boton:hover { background-color: transparent; color: #fcfbfa !important; }
 
         /* REPRODUCIR FLOTANTE */
         .music-player {
@@ -139,7 +139,6 @@
             border-radius: 4px; font-weight: bold; text-align: center;
         }
         .exito { background-color: #e2f0d9; color: #385723; }
-        .error { background-color: #fce4d6; color: #c65911; }
     </style>
 </head>
 <body>
@@ -175,132 +174,17 @@
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
         <p data-aos="fade-up" data-aos-delay="200">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
         <p data-aos="fade-up" data-aos-delay="300"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
-        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
+        <a href="https://maps.google.com/?q=Parroquia+de+Santa+Maria+del+Remei+Barcelona" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
     </div>
 
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
         <p data-aos="fade-up" data-aos-delay="200">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
         <p data-aos="fade-up" data-aos-delay="300"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
-        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
+        <a href="https://maps.google.com/?q=Masia+Rosas+Sant+Cugat" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
     </div>
 
     <div class="franja franja-oscura">
         <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
         <p data-aos="fade-up" data-aos-delay="200">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
-        <p data-aos="fade-up" data-aos-delay="300"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
-    </div>
-
-    <div class="franja franja-blanca">
-        <h2 data-aos="fade-up">📸 Compartte tus Recuerdos</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
-        <a href="#" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Subir Fotos al Álbum</a>
-    </div>
-
-    <div class="franja franja-arena">
-        <h2 data-aos="fade-up">💌 Confirmación</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Por favor, confímanos tu asistencia respondiendo a estas breves preguntas.</p>
-        
-        <form class="form-rsvp" id="rsvpForm" onsubmit="enviarDatosExcel(event)" data-aos="fade-up" data-aos-delay="200">
-            <div class="form-group">
-                <label>Nombre y Apellidos:</label>
-                <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
-            </div>
-            <div class="form-group">
-                <label>¿Asistirás?</label>
-                <select id="asistencia" required onchange="checkAsistencia(this.value)">
-                    <option value="">Selecciona...</option>
-                    <option value="Sí, asistiré con mucho gusto">Sí, ¡allí estaré!</option>
-                    <option value="No podré asistir">Lamentablemente no podré ir</option>
-                </select>
-            </div>
-            <div id="detallesAsistencia">
-                <div class="form-group">
-                    <label>¿Cuántos seréis en total?:</label>
-                    <input type="number" id="acompanantes" min="1" value="1">
-                </div>
-                <div class="form-group">
-                    <label>¿Plaza de autobús?</label>
-                    <select id="autobus">
-                        <option value="No necesito autobús">No, voy por mi cuenta</option>
-                        <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
-                        <option value="Sólo Ida">Sólo Ida</option>
-                        <option value="Sólo Vuelta">Sólo Vuelta</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>¿Alguna alergia, intolerancia o menú especial?</label>
-                    <textarea id="alergias" rows="2" placeholder="Ej: Celíaco, Vegano..."></textarea>
-                </div>
-            </div>
-            <button type="submit" id="btn-enviar" class="boton" style="width: 100%; cursor: pointer;">Confirmar Asistencia</button>
-            
-            <div id="mensaje-estado"></div>
-        </form>
-    </div>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Inicializar animaciones al hacer scroll
-        AOS.init({ duration: 1000, once: true });
-
-        // Función entrada de la portada
-        function entrarWeb() {
-            const splash = document.getElementById('splash-screen');
-            splash.style.opacity = '0';
-            setTimeout(() => {
-                splash.style.display = 'none';
-                document.getElementById('musicPlayer').style.display = 'flex';
-            }, 800);
-            document.getElementById("bgMusic").play().catch(e => console.log("Audio manual"));
-        }
-
-        function toggleMusic() {
-            const audio = document.getElementById("bgMusic");
-            const icon = document.getElementById("musicIcon");
-            if (audio.paused) { audio.play(); icon.innerText = "⏸️"; } 
-            else { audio.pause(); icon.innerText = "🎵"; }
-        }
-
-        function checkAsistencia(val) {
-            document.getElementById("detallesAsistencia").style.display = (val === "No podré asistir") ? "none" : "block";
-        }
-
-        // CUENTA ATRÁS EN TIEMPO REAL
-        const targetDate = new Date("November 14, 2026 11:00:00").getTime();
-        setInterval(function() {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-            document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
-            document.getElementById("hours").innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-            document.getElementById("minutes").innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
-            document.getElementById("seconds").innerText = Math.floor((diff % (1000*60)) / 1000);
-        }, 1000);
-
-        // ENVÍO DE DATOS AUTOMÁTICO AL EXCEL
-        function enviarDatosExcel(event) {
-            event.preventDefault();
-            
-            // Tu URL de Google Apps Script ya enlazada directamente
-            const URL_APPS_SCRIPT = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec"; 
-
-            const boton = document.getElementById("btn-enviar");
-            const estado = document.getElementById("mensaje-estado");
-            
-            boton.innerText = "Enviando...";
-            boton.disabled = true;
-
-            const datos = {
-                nombre: document.getElementById("nombre").value,
-                asistencia: document.getElementById("asistencia").value,
-                acompanantes: document.getElementById("asistencia").value === "No podré asistir" ? 0 : document.getElementById("acompanantes").value,
-                autobus: document.getElementById("asistencia").value === "No podré asistir" ? "N/A" : document.getElementById("autobus").value,
-                alergias: document.getElementById("asistencia").value === "No podré asistir" ? "N/A" : (document.getElementById("alergias").value || "Ninguna")
-            };
-
-            fetch(URL_APPS_SCRIPT, {
-                method: "POST",
-                mode: "no-cors", 
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(datos)
-            })
+        <p data-aos="fade-up" data-aos-delay="300"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p
