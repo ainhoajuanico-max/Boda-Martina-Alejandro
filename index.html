@@ -29,14 +29,14 @@
             color: #5c5446;
         }
 
-        /* 1. PANTALLA DE BIENVENIDA (SPLASH) - ULTRA OPTIMIZADA */
+        /* 1. PANTALLA DE BIENVENIDA (SPLASH) */
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') center/cover no-repeat;
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
-            z-index: 99999; /* Máxima prioridad visual */
+            z-index: 99999;
             color: white;
             opacity: 1;
             transition: opacity 0.5s ease, visibility 0.5s;
@@ -140,6 +140,7 @@
             border-radius: 4px; font-weight: bold; text-align: center;
         }
         .exito { background-color: #e2f0d9; color: #385723; }
+        .error { background-color: #f8d7da; color: #721c24; }
     </style>
 </head>
 <body>
@@ -175,14 +176,14 @@
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
         <p data-aos="fade-up" data-aos-delay="200">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
         <p data-aos="fade-up" data-aos-delay="300"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
-        <a href="https://www.google.com/maps/place/Santa+Maria+del+Remei/@41.3869523,2.1293641,17z/data=!3m2!4b1!5s0x12a4986470f03591:0x188a60326ff3e57!4m6!3m5!1s0x12a4986470b187e5:0x33ded651afa322c4!8m2!3d41.3869483!4d2.131939!16s%2Fg%2F11bc71k821?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D4" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
+        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
     </div>
 
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
         <p data-aos="fade-up" data-aos-delay="200">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
         <p data-aos="fade-up" data-aos-delay="300"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
-        <a href="https://www.google.com/maps/place/Santa+Maria+del+Remei/@41.3869523,2.1293641,17z/data=!3m2!4b1!5s0x12a4986470f03591:0x188a60326ff3e57!4m6!3m5!1s0x12a4986470b187e5:0x33ded651afa322c4!8m2!3d41.3869483!4d2.131939!16s%2Fg%2F11bc71k821?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D5" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
+        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
     </div>
 
     <div class="franja franja-oscura">
@@ -194,14 +195,14 @@
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
         <p data-aos="fade-up" data-aos-delay="200">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
-        <a href="http://googleusercontent.com/photos.google.com/16" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Subir Fotos al Álbum</a>
+        <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Subir Fotos al Álbum</a>
     </div>
 
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">💌 Confirmación</h2>
         <p data-aos="fade-up" data-aos-delay="100">Por favor, confímanos tu asistencia respondiendo a estas breves preguntas.</p>
         
-        <form class="form-rsvp" id="rsvpForm" action="https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec" method="POST" target="oculto_iframe" onsubmit="mostrarMensajeExito()" data-aos="fade-up" data-aos-delay="200">
+        <form class="form-rsvp" id="rsvpForm" onsubmit="enviarFormulario(event)" data-aos="fade-up" data-aos-delay="200">
             
             <div class="form-group">
                 <label>Nombre y Apellidos:</label>
@@ -241,33 +242,26 @@
             
             <div id="mensaje-estado"></div>
         </form>
-
-        <iframe name="oculto_iframe" id="oculto_iframe" style="display:none;"></iframe>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
 
-        // SOLUCIÓN RADICAL: Quita la pantalla inmediatamente sin importar nada más
         function entrarWeb() {
             const splash = document.getElementById('splash-screen');
-            
-            // 1. Forzar desaparición inmediata
             splash.style.opacity = '0';
-            splash.style.pointerEvents = 'none'; // Evita clics fantasma
+            splash.style.pointerEvents = 'none';
             
             setTimeout(() => {
                 splash.style.display = 'none';
                 document.getElementById('musicPlayer').style.display = 'flex';
             }, 500);
             
-            // 2. Intentar audio por separado (si falla, no interrumpe el paso 1)
             setTimeout(() => {
                 try {
                     const audio = document.getElementById("bgMusic");
                     audio.play().catch(err => {
-                        console.log("Audio en espera del usuario");
                         document.getElementById("musicIcon").innerText = "🎵";
                     });
                 } catch(e) {}
@@ -285,20 +279,46 @@
             document.getElementById("detallesAsistencia").style.display = (val === "No podré asistir") ? "none" : "block";
         }
 
-        function mostrarMensajeExito() {
+        // NUEVA FUNCIÓN DE ENVÍO ULTRA SEGURO POR FONDO (FETCH)
+        function enviarFormulario(event) {
+            event.preventDefault(); // Detiene el envío antiguo que fallaba
+            
             const boton = document.getElementById("btn-enviar");
             const estado = document.getElementById("mensaje-estado");
+            const form = document.getElementById("rsvpForm");
             
-            boton.innerText = "Enviando...";
+            boton.innerText = "Enviando respuesta...";
             boton.disabled = true;
-
-            setTimeout(() => {
+            
+            // Tu URL exacta de Google Apps Script
+            const urlScript = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec";
+            
+            // Recoger los datos de los inputs de forma limpia
+            const formData = new FormData(form);
+            
+            // Enviar los datos en segundo plano de forma asíncrona
+            fetch(urlScript, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors' // Requisito esencial para que Google acepte peticiones desde otras webs ajenas
+            })
+            .then(() => {
+                // ÉXITO COMPLETO: Los datos entraron al Excel
                 estado.innerText = "¡Muchas gracias! Tu respuesta se ha guardado correctamente. ✨";
                 estado.className = "exito";
                 estado.style.display = "block";
                 boton.innerText = "¡Confirmado!";
-                document.getElementById("rsvpForm").reset();
-            }, 1000);
+                form.reset();
+                document.getElementById("detallesAsistencia").style.display = "block"; // Reset visual
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                estado.innerText = "Hubo un problema temporal. Por favor, inténtalo de nuevo.";
+                estado.className = "error";
+                estado.style.display = "block";
+                boton.disabled = false;
+                boton.innerText = "Confirmar Asistencia";
+            });
         }
 
         // CUENTA ATRÁS
