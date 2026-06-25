@@ -100,7 +100,7 @@
 
         p { font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 600px; font-weight: 300; }
 
-        /* BOTONES CORREGIDOS */
+        /* BOTONES */
         .boton {
             display: inline-block; background-color: #5c5446; color: white !important;
             padding: 14px 32px; text-decoration: none; border-radius: 4px;
@@ -174,17 +174,143 @@
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
         <p data-aos="fade-up" data-aos-delay="200">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
         <p data-aos="fade-up" data-aos-delay="300"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
-        <a href="https://maps.google.com/?q=Parroquia+de+Santa+Maria+del+Remei+Barcelona" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
+        <a href="https://www.google.com/maps/place/Santa+Maria+del+Remei/@41.3869523,2.1293641,17z/data=!3m2!4b1!5s0x12a4986470f03591:0x188a60326ff3e57!4m6!3m5!1s0x12a4986470b187e5:0x33ded651afa322c4!8m2!3d41.3869483!4d2.131939!16s%2Fg%2F11bc71k821?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D1" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
     </div>
 
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
         <p data-aos="fade-up" data-aos-delay="200">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
         <p data-aos="fade-up" data-aos-delay="300"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
-        <a href="https://maps.google.com/?q=Masia+Rosas+Sant+Cugat" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
+        <a href="https://www.google.com/maps/place/Santa+Maria+del+Remei/@41.3869523,2.1293641,17z/data=!3m2!4b1!5s0x12a4986470f03591:0x188a60326ff3e57!4m6!3m5!1s0x12a4986470b187e5:0x33ded651afa322c4!8m2!3d41.3869483!4d2.131939!16s%2Fg%2F11bc71k821?entry=ttu&g_ep=EgoyMDI2MDYxNi4wIKXMDSoASAFQAw%3D%3D2" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
     </div>
 
     <div class="franja franja-oscura">
         <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
         <p data-aos="fade-up" data-aos-delay="200">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
-        <p data-aos="fade-up" data-aos-delay="300"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p
+        <p data-aos="fade-up" data-aos-delay="300"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
+    </div>
+
+    <div class="franja franja-blanca">
+        <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
+        <a href="http://googleusercontent.com/photos.google.com/13" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Subir Fotos al Álbum</a>
+    </div>
+
+    <div class="franja franja-arena">
+        <h2 data-aos="fade-up">💌 Confirmación</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Por favor, confímanos tu asistencia respondiendo a estas breves preguntas.</p>
+        
+        <form class="form-rsvp" id="rsvpForm" action="https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec" method="POST" target="oculto_iframe" onsubmit="mostrarMensajeExito()" data-aos="fade-up" data-aos-delay="200">
+            
+            <div class="form-group">
+                <label>Nombre y Apellidos:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+            
+            <div class="form-group">
+                <label>¿Asistirás?</label>
+                <select name="asistencia" id="asistencia" required onchange="checkAsistencia(this.value)">
+                    <option value="">Selecciona...</option>
+                    <option value="Sí, asistiré con mucho gusto">Sí, ¡allí estaré!</option>
+                    <option value="No podré asistir">Lamentablemente no podré ir</option>
+                </select>
+            </div>
+            
+            <div id="detallesAsistencia">
+                <div class="form-group">
+                    <label>¿Cuántos seréis en total?:</label>
+                    <input type="number" name="acompanantes" id="acompanantes" min="1" value="1">
+                </div>
+                <div class="form-group">
+                    <label>¿Plaza de autobús?</label>
+                    <select name="autobus" id="autobus">
+                        <option value="No necesito autobús">No, voy por mi cuenta</option>
+                        <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
+                        <option value="Sólo Ida">Sólo Ida</option>
+                        <option value="Sólo Vuelta">Sólo Vuelta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>¿Alguna alergia, intolerancia o menú especial?</label>
+                    <textarea name="alergias" id="alergias" rows="2" placeholder="Ej: Celíaco, Vegano..."></textarea>
+                </div>
+            </div>
+            
+            <button type="submit" id="btn-enviar" class="boton" style="width: 100%;">Confirmar Asistencia</button>
+            
+            <div id="mensaje-estado"></div>
+        </form>
+
+        <iframe name="oculto_iframe" id="oculto_iframe" style="display:none;"></iframe>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // MEJORA CRÍTICA: Función a prueba de fallos para levantar la pantalla siempre
+        function entrarWeb() {
+            const splash = document.getElementById('splash-screen');
+            
+            // 1. Quitar la pantalla visualmente de inmediato
+            splash.style.opacity = '0';
+            setTimeout(() => {
+                splash.style.display = 'none';
+                document.getElementById('musicPlayer').style.display = 'flex';
+            }, 800);
+            
+            // 2. Intentar reproducir audio de forma segura. Si falla o se bloquea, el código no se rompe.
+            try {
+                const audio = document.getElementById("bgMusic");
+                let playPromise = audio.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(error => {
+                        console.log("Reproducción automática bloqueada por el navegador. El usuario debe activar la música manualmente.");
+                        document.getElementById("musicIcon").innerText = "🎵";
+                    });
+                }
+            } catch (e) {
+                console.log("Error de audio controlado:", e);
+            }
+        }
+
+        function toggleMusic() {
+            const audio = document.getElementById("bgMusic");
+            const icon = document.getElementById("musicIcon");
+            if (audio.paused) { audio.play(); icon.innerText = "⏸️"; } 
+            else { audio.pause(); icon.innerText = "🎵"; }
+        }
+
+        function checkAsistencia(val) {
+            document.getElementById("detallesAsistencia").style.display = (val === "No podré asistir") ? "none" : "block";
+        }
+
+        function mostrarMensajeExito() {
+            const boton = document.getElementById("btn-enviar");
+            const estado = document.getElementById("mensaje-estado");
+            
+            boton.innerText = "Enviando...";
+            boton.disabled = true;
+
+            setTimeout(() => {
+                estado.innerText = "¡Muchas gracias! Tu respuesta se ha guardado correctamente. ✨";
+                estado.className = "exito";
+                estado.style.display = "block";
+                boton.innerText = "¡Confirmado!";
+                document.getElementById("rsvpForm").reset();
+            }, 1000);
+        }
+
+        // CUENTA ATRÁS
+        const targetDate = new Date("November 14, 2026 11:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
+            document.getElementById("hours").innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+            document.getElementById("minutes").innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
+            document.getElementById("seconds").innerText = Math.floor((diff % (1000*60)) / 1000);
+        }, 1000);
+    </script>
+</body>
+</html>
