@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martina & Alejandro 💍</title>
     
-    <!-- Fuentes Elegantes -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Montserrat:wght=300;400;600&display=swap');
     </style>
     
-    <!-- Librería de Animaciones CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
@@ -31,13 +29,18 @@
             color: #5c5446;
         }
 
-        /* 1. PANTALLA DE BIENVENIDA A PANTALLA COMPLETA (CORREGIDA) */
+        /* 1. PANTALLA DE BIENVENIDA A PANTALLA COMPLETA */
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
             
-            /* Provamos las tres opciones típicas de nombre en cascada para que el navegador sí o sí encuentre tu archivo */
-            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('PORTADA.JPEG'), url('portada.jpeg'), url('PORTADA.jpg');
+            /* Busquem la imatge en els formats .jpg i .jpeg per assegurar el tret. 
+               El "linear-gradient" afeegeix una capa fosca molt suau a sobre de la foto perquè el text blanc es llegeixi perfectament */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
+                              url('PORTADA.jpg'), 
+                              url('portada.jpg'), 
+                              url('PORTADA.JPEG'), 
+                              url('portada.jpeg');
             
             background-size: cover;
             background-position: center;
@@ -51,12 +54,11 @@
             padding: 20px;
         }
 
-        /* Forzamos texto blanco encima de la foto de fondo para que contraste precioso */
         #splash-screen h1 { 
             color: #ffffff; 
             font-size: 3.2rem; 
             margin: 0 0 10px 0; 
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 15px rgba(0,0,0,0.6);
         }
         #splash-screen p { 
             color: #f4efe2; 
@@ -64,7 +66,7 @@
             letter-spacing: 4px; 
             text-transform: uppercase; 
             margin: 0 0 40px 0;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
         }
         
         .btn-entrar {
@@ -78,7 +80,7 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             border: none;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
             transition: all 0.3s;
         }
         .btn-entrar:hover { 
@@ -170,14 +172,12 @@
 </head>
 <body>
 
-    <!-- 1. PANTALLA DE BIENVENIDA (FOND COMPLET SENSE CERCLES) -->
     <div id="splash-screen">
         <h1>Martina & Alejandro</h1>
         <p>14 . 11 . 2026</p>
         <button class="btn-entrar" onclick="enterWeb()">Ingresar a la Invitación</button>
     </div>
 
-    <!-- AUDIO DE FONDO CON EL ARCHIVO MUSICA.MP3.MP3 -->
     <audio id="bgMusic" loop>
         <source src="musica.mp3.mp3" type="audio/mpeg">
     </audio>
@@ -186,7 +186,6 @@
         <span id="musicIcon">⏸️</span> <span style="font-size:0.8rem; font-weight:600; color:#5c5446;">MÚSICA</span>
     </div>
 
-    <!-- FRANJA 1: HERO PORTADA -->
     <div class="franja franja-hero">
         <p class="subtitulo" data-aos="fade-up">¡Nos casamos!</p>
         <h1 data-aos="fade-up" data-aos-delay="200">Martina & Alejandro</h1>
@@ -200,7 +199,6 @@
         </div>
     </div>
 
-    <!-- FRANJA 2: LA CEREMONIA -->
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
         <p data-aos="fade-up" data-aos-delay="200">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
@@ -208,167 +206,6 @@
         <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
     </div>
 
-    <!-- FRANJA 3: EL CONVITE -->
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
-        <p data-aos="fade-up" data-aos-delay="300"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
-        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
-    </div>
-
-    <!-- FRANJA 4: AUTOBÚS -->
-    <div class="franja franja-oscura">
-        <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
-        <p data-aos="fade-up" data-aos-delay="200">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
-        <p data-aos="fade-up" data-aos-delay="300"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
-    </div>
-
-    <!-- FRANJA 5: RECOPILADOR FOTOS -->
-    <div class="franja franja-blanca">
-        <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
-        <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Subir Fotos al Álbum</a>
-    </div>
-
-    <!-- FRANJA 6: FORMULARIO RSVP -->
-    <div class="franja franja-arena">
-        <h2 data-aos="fade-up">💌 Confirmación</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Por favor, confímanos tu asistencia respondiendo a estas breves preguntas.</p>
-        
-        <form class="form-rsvp" id="rsvpForm" onsubmit="enviarFormulario(event)" data-aos="fade-up" data-aos-delay="200">
-            
-            <div class="form-group">
-                <label>Nombre y Apellidos:</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Ej: Juan Pérez" required>
-            </div>
-            
-            <div class="form-group">
-                <label>¿Asistirás?</label>
-                <select name="asistencia" id="asistencia" required onchange="checkAsistencia(this.value)">
-                    <option value="">Selecciona...</option>
-                    <option value="Sí, asistiré con mucho gusto">Sí, ¡allí estaré!</option>
-                    <option value="No podré asistir">Lamentablemente no podré ir</option>
-                </select>
-            </div>
-            
-            <div id="detallesAsistencia">
-                <div class="form-group">
-                    <label>¿Cuántos seréis en total?:</label>
-                    <input type="number" name="acompanantes" id="acompanantes" min="1" value="1">
-                </div>
-                <div class="form-group">
-                    <label>¿Plaza de autobús?</label>
-                    <select name="autobus" id="autobus">
-                        <option value="No necesito autobús">No, voy por mi cuenta</option>
-                        <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
-                        <option value="Sólo Ida">Sólo Ida</option>
-                        <option value="Sólo Vuelta">Sólo Vuelta</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>¿Alguna alergia, intolerancia o menú especial?</label>
-                    <textarea name="alergias" id="alergias" rows="2" placeholder="Ej: Celíaco, Vegano..."></textarea>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>🎵 ¿Qué canción no puede faltar en la fiesta?</label>
-                <input type="text" name="cancion" id="cancion" placeholder="Artista - Título de la canción">
-            </div>
-            
-            <button type="submit" id="btn-enviar" class="boton" style="width: 100%;">Confirmar Asistencia</button>
-            
-            <div id="mensaje-estado"></div>
-        </form>
-    </div>
-
-    <!-- LIBRERÍAS JAVASCRIPT -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-
-        function enterWeb() {
-            const splash = document.getElementById('splash-screen');
-            splash.style.opacity = '0';
-            splash.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                splash.style.display = 'none';
-                document.getElementById('musicPlayer').style.display = 'flex';
-            }, 600);
-            
-            setTimeout(() => {
-                try {
-                    const audio = document.getElementById("bgMusic");
-                    audio.play().catch(err => {
-                        console.log("Error al jugar el audio:", err);
-                        document.getElementById("musicIcon").innerText = "🎵";
-                    });
-                } catch(e) {}
-            }, 100);
-        }
-
-        function toggleMusic() {
-            const audio = document.getElementById("bgMusic");
-            const icon = document.getElementById("musicIcon");
-            if (audio.paused) { audio.play(); icon.innerText = "⏸️"; } 
-            else { audio.pause(); icon.innerText = "🎵"; }
-        }
-
-        function checkAsistencia(val) {
-            document.getElementById("detallesAsistencia").style.display = (val === "No podré asistir") ? "none" : "block";
-        }
-
-        function enviarFormulario(event) {
-            event.preventDefault();
-            
-            const boton = document.getElementById("btn-enviar");
-            const estado = document.getElementById("mensaje-estado");
-            const form = document.getElementById("rsvpForm");
-            
-            boton.innerText = "Enviando respuesta...";
-            boton.disabled = true;
-            
-            const urlScript = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec";
-            
-            const datos = new URLSearchParams(new FormData(form));
-            
-            fetch(urlScript, {
-                method: 'POST',
-                body: datos.toString(),
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                mode: 'no-cors'
-            })
-            .then(() => {
-                estado.innerText = "¡Muchas gracias! Tu respuesta se ha guardado correctamente. ✨";
-                estado.className = "exito";
-                estado.style.display = "block";
-                boton.innerText = "¡Confirmado!";
-                form.reset();
-                document.getElementById("detallesAsistencia").style.display = "block";
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                estado.innerText = "Hubo un problema temporal. Por favor, inténtalo de nuevo.";
-                estado.className = "error";
-                estado.style.display = "block";
-                boton.disabled = false;
-                boton.innerText = "Confirmar Asistencia";
-            });
-        }
-
-        // CUENTA ATRÁS (Calculada para el 14 de Noviembre de 2026)
-        const targetDate = new Date("November 14, 2026 11:00:00").getTime();
-        setInterval(function() {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-            document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
-            document.getElementById("hours").innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-            document.getElementById("minutes").innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
-            document.getElementById("seconds").innerText = Math.floor((diff % (1000*60)) / 1000);
-        }, 1000);
-    </script>
-</body>
-</html>
+        <p data-aos="fade-up" data-aos-delay="200">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en
