@@ -418,9 +418,94 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inicialització segura de les animacions
+        // Inicialització de les animacions AOS
         try { 
             AOS.init({ duration: 1200, once: true }); 
         } catch(e) { 
             console.log(e); 
         }
+
+        // FUNCIONS DEL BOTÓ ENTRAR I MÚSICA
+        var music = document.getElementById("bgMusic");
+        var musicPlayer = document.getElementById("musicPlayer");
+        var musicIcon = document.getElementById("musicIcon");
+
+        function enterWeb() {
+            var splash = document.getElementById("splash-screen");
+            splash.style.opacity = "0";
+            setTimeout(function() {
+                splash.style.visibility = "hidden";
+            }, 800);
+
+            // Mostrar botó de música i intentar reproduir-la
+            musicPlayer.style.display = "flex";
+            music.play().then(function() {
+                musicIcon.innerText = "||";
+            }).catch(function(error) {
+                console.log("La reproducció automàtica ha estat bloquejada pel navegador.");
+                musicIcon.innerText = "►";
+            });
+        }
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                musicIcon.innerText = "||";
+            } else {
+                music.pause();
+                musicIcon.innerText = "►";
+            }
+        }
+
+        // COMPTE ENRERE (Data del casament: 14 de Novembre de 2026)
+        var targetDate = new Date("Nov 14, 2026 11:00:00").getTime();
+
+        var countdownInterval = setInterval(function() {
+            var now = new Date().getTime();
+            var difference = targetDate - now;
+
+            if (difference < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById("days").innerText = "00";
+                document.getElementById("hours").innerText = "00";
+                document.getElementById("minutes").innerText = "00";
+                document.getElementById("seconds").innerText = "00";
+                return;
+            }
+
+            var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+
+        // FUNCIONS DEL FORMULARI RSVP
+        function checkAsistencia(value) {
+            var detalles = document.getElementById("detallesAsistencia");
+            if (value === "No podré asistir") {
+                detalles.style.display = "none";
+            } else {
+                detalles.style.display = "block";
+            }
+        }
+
+        function enviarFormulario(event) {
+            event.preventDefault();
+            var msgEstado = document.getElementById("mensaje-estado");
+            
+            // Simula enviament (aquí hauries d'afegir la teva lògica d'enviament a Google Sheets o email)
+            msgEstado.style.display = "block";
+            msgEstado.className = "exito";
+            msgEstado.innerText = "¡Gracias! Tu confirmación ha sido enviada correctamente.";
+            
+            document.getElementById("rsvpForm").reset();
+            document.getElementById("detallesAsistencia").style.display = "block";
+        }
+    </script>
+</body>
+</html>
