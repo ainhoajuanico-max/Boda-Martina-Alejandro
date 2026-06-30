@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martina & Alejandro 14.11.2026</title>
     
+    <!-- Fonts d'Alta Elegància -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;1,300&family=Montserrat:wght=200;300;400;500&family=Playfair+Display:ital,wght=0,400;1,400&display=swap');
     </style>
     
+    <!-- Llibreria d'Animacions CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
@@ -23,7 +25,7 @@
             overflow-x: hidden;
         }
 
-        /* 1. PANTALLA DE BIENVENIDA (PORTADA) */
+        /* 1. PANTALLA DE BENVINGUDA (PORTADA SPLASH) */
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
@@ -81,7 +83,7 @@
             border: 1px solid #ffffff;
         }
 
-        /* 2. FRANJA HERO CORREGIDA (SUBPORTADA TOTALMENT CENTRADA) */
+        /* 2. SUBPORTADA TOTALMENT CENTRADA (ESTIL IMAGE_66A014.JPG) */
         .franja-hero { 
             position: relative;
             background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
@@ -93,13 +95,12 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centrat vertical perfecte */
-            align-items: center;     /* Centrat horitzontal perfecte */
+            justify-content: center; 
+            align-items: center;     
             color: #ffffff;
             padding: 20px;
         }
 
-        /* Contenidor intern per assegurar l'alineació de tot el bloc central */
         .hero-content {
             display: flex;
             flex-direction: column;
@@ -127,7 +128,7 @@
             vertical-align: middle;
         }
 
-        /* Nombres en cursiva fina */
+        /* Noms a sota */
         .nombres-hero {
             font-family: 'Playfair Display', serif;
             font-style: italic;
@@ -138,7 +139,7 @@
             opacity: 0.95;
         }
 
-        /* Fecha fina e hilada */
+        /* Data */
         .fecha-hero {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.8rem;
@@ -149,7 +150,7 @@
             margin-bottom: 25px;
         }
 
-        /* COMPTE ENRERE INTEGRAT I TRANSPARENT AL HERO */
+        /* COMPTE ENRERE INTEGRAT ELEGANT */
         .countdown { 
             display: flex; 
             justify-content: center; 
@@ -180,7 +181,7 @@
             letter-spacing: 1.5px; 
         }
 
-        /* El indicador DESPLAÇA con la línea vertical exacta */
+        /* Indicador de desplaçament */
         .desplaca-container {
             position: absolute;
             bottom: 35px;
@@ -204,7 +205,7 @@
             background-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* ICONO DE MÚSICA IDÉNTICO A LA FOTO */
+        /* BOTÓ DE MÚSICA DISCRET (IDÉNTIC AL DE LA IMATGE DE REFERÈNCIA) */
         .music-player {
             position: fixed; 
             bottom: 30px; 
@@ -236,7 +237,7 @@
             margin-left: -1px;
         }
 
-        /* OTRAS FRANJAS DE LA INVITACIÓN */
+        /* RESTA DE FRANGES */
         .franja {
             padding: 100px 20px;
             display: flex;
@@ -286,7 +287,7 @@
         }
         .boton:hover { background-color: transparent; color: #4a453f !important; }
 
-        /* FORMULARIO */
+        /* FORMULARI RSVP */
         .form-rsvp {
             text-align: left; background: #ffffff; padding: 40px;
             margin-top: 35px; border: 1px solid #eae5df; width: 100%; max-width: 500px;
@@ -306,26 +307,31 @@
 </head>
 <body>
 
+    <!-- 1. PANTALLA DE BENVINGUDA -->
     <div id="splash-screen">
         <h1>Martina & Alejandro</h1>
         <p>14 . 11 . 2026</p>
         <button class="btn-entrar" onclick="enterWeb()">Ingresar</button>
     </div>
 
-    <audio id="bgMusic" loop>
+    <!-- AUDIO DE FONS -->
+    <audio id="bgMusic" loop preload="auto">
         <source src="musica.mp3.mp3" type="audio/mpeg">
     </audio>
 
+    <!-- ICONO DE MÚSICA PREMIUM EN ROL DE PAUSA -->
     <div class="music-player" id="musicPlayer" style="display:none;" onclick="toggleMusic()">
         <span id="musicIcon" class="music-icon-bars">||</span>
     </div>
 
+    <!-- FRANJA 1: HERO CORREGIT I TOTALMENT CENTRAT -->
     <div class="franja-hero">
         <div class="hero-content">
             <h3 class="iniciales-hero" data-aos="fade-up" data-aos-duration="1200">M<span>&</span>A</h3>
             <div class="nombres-hero" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">Martina i Alejandro</div>
             <div class="fecha-hero" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1200">14 . 11 . 2026</div>
 
+            <!-- Compte enrere resistent a errors de renderitzat -->
             <div class="countdown" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1200">
                 <div class="time-box"><span id="days">00</span><label>Días</label></div>
                 <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
@@ -340,6 +346,7 @@
         </div>
     </div>
 
+    <!-- FRANJA 2: LA CEREMONIA -->
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
         <p data-aos="fade-up" data-aos-delay="100">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
@@ -347,6 +354,7 @@
         <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Ver ubicación</a>
     </div>
 
+    <!-- FRANJA 3: EL CONVITE -->
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
         <p data-aos="fade-up" data-aos-delay="100">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
@@ -354,18 +362,21 @@
         <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Cómo llegar</a>
     </div>
 
+    <!-- FRANJA 4: AUTOBÚS -->
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
         <p data-aos="fade-up" data-aos-delay="100">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
         <p data-aos="fade-up" data-aos-delay="200"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
     </div>
 
+    <!-- FRANJA 5: RECOPILADOR FOTOS -->
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
         <p data-aos="fade-up" data-aos-delay="100">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
         <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="200">Subir Fotos</a>
     </div>
 
+    <!-- FRANJA 6: FORMULARIO RSVP -->
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">💌 Confirmación</h2>
         <p data-aos="fade-up" data-aos-delay="100">Por favor, confímanos tu asistencia respondiendo a estas breves preguntas.</p>
@@ -416,3 +427,100 @@
             <div id="mensaje-estado"></div>
         </form>
     </div>
+
+    <!-- SCRIPT SEGUR AMB COMPROBACIÓ ANTI-BLOQUEIG -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicialització d'animacions de fons
+        try { AOS.init({ duration: 1200, once: true }); } catch(e) { console.log(e); }
+
+        // Funció del botó d'entrada a la invitació
+        function enterWeb() {
+            const splash = document.getElementById('splash-screen');
+            if(splash) {
+                splash.style.opacity = '0';
+                splash.style.pointerEvents = 'none';
+                setTimeout(() => { splash.style.display = 'none'; }, 800);
+            }
+            
+            const player = document.getElementById('musicPlayer');
+            if(player) player.style.display = 'flex';
+            
+            try {
+                const audio = document.getElementById("bgMusic");
+                if(audio) audio.play();
+            } catch(err) { console.log("Audio play blocked:", err); }
+        }
+
+        // Interruptor per pausar/reproduir música
+        function toggleMusic() {
+            const audio = document.getElementById("bgMusic");
+            const icon = document.getElementById("musicIcon");
+            if (!audio || !icon) return;
+            
+            if (audio.paused) { 
+                audio.play(); 
+                icon.innerText = "||"; 
+            } else { 
+                audio.pause(); 
+                icon.innerText = "▶"; 
+            }
+        }
+
+        function checkAsistencia(val) {
+            const div = document.getElementById("detallesAsistencia");
+            if(div) div.style.display = (val === "No podré asistir") ? "none" : "block";
+        }
+
+        // Funció segura del Formulari RSVP
+        function enviarFormulario(event) {
+            event.preventDefault();
+            const boton = document.getElementById("btn-enviar");
+            const estado = document.getElementById("mensaje-estado");
+            const form = document.getElementById("rsvpForm");
+            if(!boton || !form || !estado) return;
+            
+            boton.innerText = "Enviando respuesta...";
+            boton.disabled = true;
+            
+            const urlScript = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec";
+            const datos = new URLSearchParams(new FormData(form));
+            
+            fetch(urlScript, {
+                method: 'POST',
+                body: datos.toString(),
+                headers: { 'Content-Type': 'application/x-www-x-www-form-urlencoded' },
+                mode: 'no-cors'
+            })
+            .then(() => {
+                estado.innerText = "Tu respuesta se ha guardado correctamente. ¡Muchas gracias! ✨";
+                estado.className = "exito";
+                estado.style.display = "block";
+                boton.innerText = "¡Confirmado!";
+                form.reset();
+                const divDetalles = document.getElementById("detallesAsistencia");
+                if(divDetalles) divDetalles.style.display = "block";
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                estado.innerText = "Hubo un problema temporal. Por favor, vuelve a intentarlo.";
+                estado.className = "error";
+                estado.style.display = "block";
+                boton.disabled = false;
+                boton.innerText = "Confirmar Asistencia";
+            });
+        }
+
+        // COMPTE ENRERE RE-ESTRUCTURAT (Protegit contra fallades Null)
+        const targetDate = new Date("November 14, 2026 11:00:00").getTime();
+        
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const elD = document.getElementById("daysNormally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
