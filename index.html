@@ -1,8 +1,164 @@
-<!-- 1. PANTALLA DE BIENVENIDA (SPLASH) - DIAGNÓSTICO -->
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martina & Alejandro 💍</title>
+    
+    <!-- Fuentes Elegantes -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Montserrat:wght=300;400;600&display=swap');
+        
+        * { box-sizing: border-box; }
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fcfbfa;
+            color: #333;
+            text-align: center;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: normal;
+            color: #5c5446;
+        }
+
+        /* 1. PANTALLA DE BIENVENIDA (SPLASH) */
+        #splash-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100vh;
+            background-color: #fcfbfa;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            z-index: 99999;
+            opacity: 1;
+            transition: opacity 0.5s ease, visibility 0.5s;
+            padding: 20px;
+        }
+        
+        #foto-novios {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 50% !important;
+            border: 3px solid #eae3d2;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        #splash-screen h1 { color: #5c5446; font-size: 2.6rem; margin: 0 0 5px 0; }
+        #splash-screen p { color: #8c826e; font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; margin: 0 0 35px 0; }
+        
+        .btn-entrar {
+            background-color: #5c5446;
+            color: white;
+            padding: 16px 45px;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            border: none;
+            box-shadow: 0 4px 15px rgba(92,84,70,0.3);
+            transition: all 0.3s;
+        }
+        .btn-entrar:hover { transform: scale(1.05); background-color: #4a4338; }
+
+        /* 2. DISEÑO POR FRANJAS VISUALES */
+        .franja {
+            padding: 90px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+        }
+        
+        .franja-hero { background-color: #eae3d2; min-height: 80vh; }
+        .franja-blanca { background-color: #fcfbfa; }
+        .franja-arena { background-color: #f4efe2; }
+        .franja-oscura { background-color: #5c5446; color: #fcfbfa; }
+        .franja-oscura h2, .franja-oscura p { color: #fcfbfa; }
+        .franja-oscura h2::after { background-color: #eae3d2; }
+
+        h1 { font-size: 3.2rem; margin: 15px 0; }
+        .subtitulo { font-size: 1.1rem; letter-spacing: 4px; text-transform: uppercase; color: #8c826e; }
+        .franja-oscura .subtitulo { color: #eae3d2; }
+        
+        h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        h2::after {
+            content: ''; display: block; width: 50px; height: 1px;
+            background-color: #8c826e; margin: 15px auto 0 auto;
+        }
+
+        .fecha {
+            font-size: 1.4rem; color: #5c5446; font-weight: bold;
+            border-top: 1px solid #8c826e; border-bottom: 1px solid #8c826e;
+            display: inline-block; padding: 12px 30px; margin-top: 25px; letter-spacing: 2px;
+        }
+
+        /* CONTADOR */
+        .countdown { display: flex; justify-content: center; gap: 15px; margin-top: 40px; }
+        .time-box { background: rgba(255, 255, 255, 0.7); padding: 15px; border-radius: 8px; min-width: 80px; }
+        .time-box span { display: block; font-size: 2rem; font-family: 'Playfair Display', serif; font-weight: bold; color: #5c5446; }
+        .time-box label { font-size: 0.75rem; text-transform: uppercase; color: #8c826e; }
+
+        p { font-size: 1.1rem; line-height: 1.8; color: #555; max-width: 600px; font-weight: 300; }
+
+        /* BOTONES */
+        .boton {
+            display: inline-block; background-color: #5c5446; color: white !important;
+            padding: 14px 32px; text-decoration: none; border-radius: 4px;
+            font-weight: 600; margin-top: 20px; font-size: 0.9rem;
+            letter-spacing: 1.5px; text-transform: uppercase; transition: all 0.3s;
+            border: 1px solid #5c5446; cursor: pointer;
+        }
+        .boton:hover { background-color: transparent; color: #5c5446 !important; }
+        
+        .franja-oscura .boton { background-color: #fcfbfa; color: #5c5446 !important; border-color: #fcfbfa; }
+        .franja-oscura .boton:hover { background-color: transparent; color: #fcfbfa !important; }
+
+        /* REPRODUCIR FLOTANTE */
+        .music-player {
+            position: fixed; bottom: 20px; right: 20px;
+            background: white; padding: 10px 15px; border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); z-index: 1000;
+            display: flex; align-items: center; gap: 10px; cursor: pointer;
+        }
+
+        /* FORMULARIO */
+        .form-rsvp {
+            text-align: left; background: white; padding: 35px;
+            border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-top: 30px; border: 1px solid #eee; width: 100%; max-width: 550px;
+        }
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; color: #5c5446; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;
+        }
+
+        #mensaje-estado {
+            display: none; padding: 15px; margin-top: 20px; 
+            border-radius: 4px; font-weight: bold; text-align: center;
+        }
+        .exito { background-color: #e2f0d9; color: #385723; }
+        .error { background-color: #f8d7da; color: #721c24; }
+    </style>
+    
+    <!-- Librería de Animaciones CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 1. PANTALLA DE BIENVENIDA CORREGIDA -->
     <div id="splash-screen">
-        <!-- Aquesta imatge carregarà una de mostra de flors per defecte si el teu PORTADA.JPEG falla, i et dirà l'error per consola -->
         <img src="PORTADA.JPEG" id="foto-novios" 
-             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=300'; console.error('ALERTA: El fitxer PORTADA.JPEG no s\'ha trobat a GitHub. Revisa la llista de fitxers.');" 
+             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=300';" 
              alt="Martina i Alejandro">
         <h1>Martina & Alejandro</h1>
         <p>14 . 11 . 2026</p>
@@ -11,5 +167,196 @@
 
     <!-- AUDIO DE FONDO CON EL ARCHIVO MUSICA.MP3.MP3 -->
     <audio id="bgMusic" loop>
-        <source src="musica.mp3.mp3" type="audio/mpeg" onerror="console.error('ALERTA: El fitxer de música no s\'ha trobat.');">
+        <source src="musica.mp3.mp3" type="audio/mpeg">
     </audio>
+
+    <div class="music-player" id="musicPlayer" style="display:none;" onclick="toggleMusic()">
+        <span id="musicIcon">⏸️</span> <span style="font-size:0.8rem; font-weight:600; color:#5c5446;">MÚSICA</span>
+    </div>
+
+    <!-- FRANJA 1: HERO PORTADA -->
+    <div class="franja franja-hero">
+        <p class="subtitulo" data-aos="fade-up">¡Nos casamos!</p>
+        <h1 data-aos="fade-up" data-aos-delay="200">Martina & Alejandro</h1>
+        <div class="fecha" data-aos="fade-up" data-aos-delay="400">14 . Noviembre . 2026</div>
+
+        <div class="countdown" data-aos="zoom-in" data-aos-delay="600">
+            <div class="time-box"><span id="days">00</span><label>Días</label></div>
+            <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>Seg</label></div>
+        </div>
+    </div>
+
+    <!-- FRANJA 2: LA CEREMONIA -->
+    <div class="franja franja-blanca">
+        <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
+        <p data-aos="fade-up" data-aos-delay="300"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
+        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación iglesia</a>
+    </div>
+
+    <!-- FRANJA 3: EL CONVITE -->
+    <div class="franja franja-arena">
+        <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
+        <p data-aos="fade-up" data-aos-delay="300"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
+        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar a la Masia</a>
+    </div>
+
+    <!-- FRANJA 4: AUTOBÚS -->
+    <div class="franja franja-oscura">
+        <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
+        <p data-aos="fade-up" data-aos-delay="200">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
+        <p data-aos="fade-up" data-aos-delay="300"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
+    </div>
+
+    <!-- FRANJA 5: RECOPILADOR FOTOS -->
+    <div class="franja franja-blanca">
+        <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
+        <p data-aos="fade-up" data-aos-delay="200">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
+        <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Subir Fotos al Álbum</a>
+    </div>
+
+    <!-- FRANJA 6: FORMULARIO RSVP -->
+    <div class="franja franja-arena">
+        <h2 data-aos="fade-up">💌 Confirmación</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Por favor, confímanos tu asistencia respondiendo a estas breves preguntas.</p>
+        
+        <form class="form-rsvp" id="rsvpForm" onsubmit="enviarFormulario(event)" data-aos="fade-up" data-aos-delay="200">
+            
+            <div class="form-group">
+                <label>Nombre y Apellidos:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+            
+            <div class="form-group">
+                <label>¿Asistirás?</label>
+                <select name="asistencia" id="asistencia" required onchange="checkAsistencia(this.value)">
+                    <option value="">Selecciona...</option>
+                    <option value="Sí, asistiré con mucho gusto">Sí, ¡allí estaré!</option>
+                    <option value="No podré asistir">Lamentablemente no podré ir</option>
+                </select>
+            </div>
+            
+            <div id="detallesAsistencia">
+                <div class="form-group">
+                    <label>¿Cuántos seréis en total?:</label>
+                    <input type="number" name="acompanantes" id="acompanantes" min="1" value="1">
+                </div>
+                <div class="form-group">
+                    <label>¿Plaza de autobús?</label>
+                    <select name="autobus" id="autobus">
+                        <option value="No necesito autobús">No, voy por mi cuenta</option>
+                        <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
+                        <option value="Sólo Ida">Sólo Ida</option>
+                        <option value="Sólo Vuelta">Sólo Vuelta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>¿Alguna alergia, intolerancia o menú especial?</label>
+                    <textarea name="alergias" id="alergias" rows="2" placeholder="Ej: Celíaco, Vegano..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>🎵 ¿Qué canción no puede faltar en la fiesta?</label>
+                <input type="text" name="cancion" id="cancion" placeholder="Artista - Título de la canción">
+            </div>
+            
+            <button type="submit" id="btn-enviar" class="boton" style="width: 100%;">Confirmar Asistencia</button>
+            
+            <div id="mensaje-estado"></div>
+        </form>
+    </div>
+
+    <!-- LIBRERÍAS JAVASCRIPT -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        function enterWeb() {
+            const splash = document.getElementById('splash-screen');
+            splash.style.opacity = '0';
+            splash.style.pointerEvents = 'none';
+            
+            setTimeout(() => {
+                splash.style.display = 'none';
+                document.getElementById('musicPlayer').style.display = 'flex';
+            }, 500);
+            
+            setTimeout(() => {
+                try {
+                    const audio = document.getElementById("bgMusic");
+                    audio.play().catch(err => {
+                        console.log("Error al reproducir audio:", err);
+                        document.getElementById("musicIcon").innerText = "🎵";
+                    });
+                } catch(e) {}
+            }, 100);
+        }
+
+        function toggleMusic() {
+            const audio = document.getElementById("bgMusic");
+            const icon = document.getElementById("musicIcon");
+            if (audio.paused) { audio.play(); icon.innerText = "⏸️"; } 
+            else { audio.pause(); icon.innerText = "🎵"; }
+        }
+
+        function checkAsistencia(val) {
+            document.getElementById("detallesAsistencia").style.display = (val === "No podré asistir") ? "none" : "block";
+        }
+
+        function enviarFormulario(event) {
+            event.preventDefault();
+            
+            const boton = document.getElementById("btn-enviar");
+            const estado = document.getElementById("mensaje-estado");
+            const form = document.getElementById("rsvpForm");
+            
+            boton.innerText = "Enviando respuesta...";
+            boton.disabled = true;
+            
+            const urlScript = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec";
+            
+            const datos = new URLSearchParams(new FormData(form));
+            
+            fetch(urlScript, {
+                method: 'POST',
+                body: datos.toString(),
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                mode: 'no-cors'
+            })
+            .then(() => {
+                estado.innerText = "¡Muchas gracias! Tu respuesta se ha guardado correctamente. ✨";
+                estado.className = "exito";
+                estado.style.display = "block";
+                boton.innerText = "¡Confirmado!";
+                form.reset();
+                document.getElementById("detallesAsistencia").style.display = "block";
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                estado.innerText = "Hubo un problemă temporal. Por favor, inténtalo de nuevo.";
+                estado.className = "error";
+                estado.style.display = "block";
+                boton.disabled = false;
+                boton.innerText = "Confirmar Asistencia";
+            });
+        }
+
+        // CUENTA ATRÁS (Calculada para el 14 de Noviembre de 2026)
+        const targetDate = new Date("November 14, 2026 11:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            document.getElementById("days").innerText = Math.floor(diff / (1000*60*60*24));
+            document.getElementById("hours").innerText = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+            document.getElementById("minutes").innerText = Math.floor((diff % (1000*60*60)) / (1000*60));
+            document.getElementById("seconds").innerText = Math.floor((diff % (1000*60)) / 1000);
+        }, 1000);
+    </script>
+</body>
+</html>
