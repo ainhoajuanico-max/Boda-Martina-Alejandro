@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martina & Alejandro 14.11.2026</title>
     
-    <!-- Fuentes de Alta Elegancia (Estilo Boda Premium / Minimalista) -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;1,300&family=Montserrat:wght=200;300;400;500&family=Playfair+Display:ital,wght=0,400;1,400&display=swap');
     </style>
     
-    <!-- Librería de Animaciones CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
@@ -83,7 +81,7 @@
             border: 1px solid #ffffff;
         }
 
-        /* 2. FRANJA HERO (SUBPORTADA ESTILO IMAGE_66A014.JPG) */
+        /* 2. FRANJA HERO CORREGIDA (SUBPORTADA TOTALMENT CENTRADA) */
         .franja-hero { 
             position: relative;
             background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
@@ -95,13 +93,22 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: center; /* Centrat vertical perfecte */
+            align-items: center;     /* Centrat horitzontal perfecte */
             color: #ffffff;
             padding: 20px;
         }
 
-        /* Iniciales gigantes del medio M & A */
+        /* Contenidor intern per assegurar l'alineació de tot el bloc central */
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* Inicials M & A */
         .iniciales-hero {
             font-family: 'Cormorant Garamond', Georgia, serif;
             font-size: 7.5rem;
@@ -120,12 +127,12 @@
             vertical-align: middle;
         }
 
-        /* Nombres abajo en cursiva fina */
+        /* Nombres en cursiva fina */
         .nombres-hero {
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 1.5rem;
-            margin: 25px 0 5px 0;
+            margin: 20px 0 5px 0;
             letter-spacing: 3px;
             font-weight: 400;
             opacity: 0.95;
@@ -139,19 +146,50 @@
             text-transform: uppercase;
             font-weight: 300;
             opacity: 0.85;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+        }
+
+        /* COMPTE ENRERE INTEGRAT I TRANSPARENT AL HERO */
+        .countdown { 
+            display: flex; 
+            justify-content: center; 
+            gap: 15px; 
+            margin-top: 15px; 
+        }
+        .time-box { 
+            background: rgba(255, 255, 255, 0.12); 
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px; 
+            border-radius: 8px; 
+            min-width: 75px; 
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); 
+        }
+        .time-box span { 
+            display: block; 
+            font-size: 1.8rem; 
+            font-family: 'Cormorant Garamond', serif; 
+            font-weight: 300; 
+            color: #ffffff; 
+        }
+        .time-box label { 
+            font-size: 0.6rem; 
+            text-transform: uppercase; 
+            color: #f4efe2; 
+            letter-spacing: 1.5px; 
         }
 
         /* El indicador DESPLAÇA con la línea vertical exacta */
         .desplaca-container {
             position: absolute;
-            bottom: 40px;
+            bottom: 35px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         .text-desplaca {
             font-size: 0.7rem;
@@ -162,11 +200,11 @@
         }
         .linea-desplaca {
             width: 1px;
-            height: 45px;
-            background-color: rgba(255, 255, 255, 0.6);
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* ICONO DE MÚSICA IDÉNTICO A LA FOTO (Círculo oscuro con botón de pausa) */
+        /* ICONO DE MÚSICA IDÉNTICO A LA FOTO */
         .music-player {
             position: fixed; 
             bottom: 30px; 
@@ -232,12 +270,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* CONTADOR DISCRETO ABAJO EN LA FRANJA DE LA IGLESIA */
-        .countdown { display: flex; justify-content: center; gap: 20px; margin: 30px 0; }
-        .time-box { min-width: 70px; }
-        .time-box span { display: block; font-size: 1.8rem; font-family: 'Cormorant Garamond', serif; font-weight: 300; color: #4a453f; }
-        .time-box label { font-size: 0.65rem; text-transform: uppercase; color: #9c9286; letter-spacing: 2px; }
-
         .boton {
             display: inline-block; 
             background-color: #4a453f; 
@@ -274,28 +306,33 @@
 </head>
 <body>
 
-    <!-- 1. PANTALLA DE BIENVENIDA -->
     <div id="splash-screen">
         <h1>Martina & Alejandro</h1>
         <p>14 . 11 . 2026</p>
         <button class="btn-entrar" onclick="enterWeb()">Ingresar</button>
     </div>
 
-    <!-- AUDIO DE FONDO -->
     <audio id="bgMusic" loop>
         <source src="musica.mp3.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- ICONO DE MÚSICA IDÉNTICO AL BOTÓN DE PAUSA DE LA FOTO -->
     <div class="music-player" id="musicPlayer" style="display:none;" onclick="toggleMusic()">
         <span id="musicIcon" class="music-icon-bars">||</span>
     </div>
 
-    <!-- FRANJA 1: SUBPORTADA ESTILO IMAGE_66A014.JPG -->
     <div class="franja-hero">
-        <h3 class="iniciales-hero" data-aos="fade-up" data-aos-duration="1200">M<span>&</span>A</h3>
-        <div class="nombres-hero" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200">Martina i Alejandro</div>
-        <div class="fecha-hero" data-aos="fade-up" data-aos-delay="500" data-aos-duration="1200">14 . 11 . 2026</div>
+        <div class="hero-content">
+            <h3 class="iniciales-hero" data-aos="fade-up" data-aos-duration="1200">M<span>&</span>A</h3>
+            <div class="nombres-hero" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">Martina i Alejandro</div>
+            <div class="fecha-hero" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1200">14 . 11 . 2026</div>
+
+            <div class="countdown" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1200">
+                <div class="time-box"><span id="days">00</span><label>Días</label></div>
+                <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
+                <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
+                <div class="time-box"><span id="seconds">00</span><label>Seg</label></div>
+            </div>
+        </div>
 
         <div class="desplaca-container" data-aos="fade-up" data-aos-delay="800">
             <span class="text-desplaca">DESPLAÇA</span>
@@ -303,46 +340,32 @@
         </div>
     </div>
 
-    <!-- FRANJA 2: LA CEREMONIA + CUENTA ATRÁS DISCRETA -->
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
-        
-        <!-- Cuenta atrás integrada de forma muy limpia -->
-        <div class="countdown" data-aos="fade-up" data-aos-delay="100">
-            <div class="time-box"><span id="days">00</span><label>Días</label></div>
-            <div class="time-box"><span id="hours">00</span><label>Horas</label></div>
-            <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
-            <div class="time-box"><span id="seconds">00</span><label>Seg</label></div>
-        </div>
-
-        <p data-aos="fade-up" data-aos-delay="200">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
-        <p data-aos="fade-up" data-aos-delay="300"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
-        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Ver ubicación</a>
+        <p data-aos="fade-up" data-aos-delay="100">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
+        <p data-aos="fade-up" data-aos-delay="200"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
+        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Ver ubicación</a>
     </div>
 
-    <!-- FRANJA 3: EL CONVITE -->
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
-        <p data-aos="fade-up" data-aos-delay="300"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
-        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="400">Cómo llegar</a>
+        <p data-aos="fade-up" data-aos-delay="100">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
+        <p data-aos="fade-up" data-aos-delay="200"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
+        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Cómo llegar</a>
     </div>
 
-    <!-- FRANJA 4: AUTOBÚS -->
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
-        <p data-aos="fade-up" data-aos-delay="200">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
-        <p data-aos="fade-up" data-aos-delay="300"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
+        <p data-aos="fade-up" data-aos-delay="100">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
+        <p data-aos="fade-up" data-aos-delay="200"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
     </div>
 
-    <!-- FRANJA 5: RECOPILADOR FOTOS -->
     <div class="franja franja-arena">
         <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
-        <p data-aos="fade-up" data-aos-delay="200">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
-        <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Subir Fotos</a>
+        <p data-aos="fade-up" data-aos-delay="100">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
+        <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="200">Subir Fotos</a>
     </div>
 
-    <!-- FRANJA 6: FORMULARIO RSVP -->
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">💌 Confirmación</h2>
         <p data-aos="fade-up" data-aos-delay="100">Por favor, confímanos tu asistencia respondiendo a estas breves preguntas.</p>
@@ -393,100 +416,3 @@
             <div id="mensaje-estado"></div>
         </form>
     </div>
-
-    <!-- LIBRERÍAS JAVASCRIPT -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1200, once: true });
-
-        function enterWeb() {
-            const splash = document.getElementById('splash-screen');
-            splash.style.opacity = '0';
-            splash.style.pointerEvents = 'none';
-            
-            setTimeout(() => {
-                splash.style.display = 'none';
-                document.getElementById('musicPlayer').style.display = 'flex';
-            }, 800);
-            
-            setTimeout(() => {
-                try {
-                    const audio = document.getElementById("bgMusic");
-                    audio.play().catch(err => {
-                        console.log("Audio play blocked:", err);
-                    });
-                } catch(e) {}
-            }, 100);
-        }
-
-        function toggleMusic() {
-            const audio = document.getElementById("bgMusic");
-            const icon = document.getElementById("musicIcon");
-            if (audio.paused) { 
-                audio.play(); 
-                icon.innerText = "||"; 
-            } else { 
-                audio.pause(); 
-                icon.innerText = "▶"; 
-            }
-        }
-
-        function checkAsistencia(val) {
-            document.getElementById("detallesAsistencia").style.display = (val === "No podré asistir") ? "none" : "block";
-        }
-
-        function enviarFormulario(event) {
-            event.preventDefault();
-            const boton = document.getElementById("btn-enviar");
-            const estado = document.getElementById("mensaje-estado");
-            const form = document.getElementById("rsvpForm");
-            
-            boton.innerText = "Enviando respuesta...";
-            boton.disabled = true;
-            
-            const urlScript = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec";
-            const datos = new URLSearchParams(new FormData(form));
-            
-            fetch(urlScript, {
-                method: 'POST',
-                body: datos.toString(),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                mode: 'no-cors'
-            })
-            .then(() => {
-                estado.innerText = "Tu respuesta se ha guardado correctamente. ¡Muchas gracias! ✨";
-                estado.className = "exito";
-                estado.style.display = "block";
-                boton.innerText = "¡Confirmado!";
-                form.reset();
-                document.getElementById("detallesAsistencia").style.display = "block";
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-                estado.innerText = "Hubo un problema temporal. Por favor, vuelve a intentarlo.";
-                estado.className = "error";
-                estado.style.display = "block";
-                boton.disabled = false;
-                boton.innerText = "Confirmar Asistencia";
-            });
-        }
-
-        // CUENTA ATRÁS COMPLETA I SENSE ERRORS
-        const targetDate = new Date("November 14, 2026 11:00:00").getTime();
-        setInterval(function() {
-            const now = new Date().getTime();
-            const diff = targetDate - now;
-            
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = String(d >= 0 ? d : 0).padStart(2, '0');
-            document.getElementById("hours").innerText = String(h >= 0 ? h : 0).padStart(2, '0');
-            document.getElementById("minutes").innerText = String(m >= 0 ? m : 0).padStart(2, '0');
-            document.getElementById("seconds").innerText = String(s >= 0 ? s : 0).padStart(2, '0');
-        }, 1000);
-    </script>
-</body>
-</html>
