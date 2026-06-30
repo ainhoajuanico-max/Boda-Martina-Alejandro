@@ -355,3 +355,157 @@
 
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
+        <p data-aos="fade-up" data-aos-delay="100">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
+        <p data-aos="fade-up" data-aos-delay="200"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
+    </div>
+
+    <div class="franja franja-arena">
+        <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
+        <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="200">Subir Fotos</a>
+    </div>
+
+    <div class="franja franja-blanca">
+        <h2 data-aos="fade-up">💌 Confirmación</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Por favor, confímanos tu asistencia respondiendo a estas breves preguntas.</p>
+        
+        <form class="form-rsvp" id="rsvpForm" onsubmit="enviarFormulario(event)" data-aos="fade-up" data-aos-delay="200">
+            
+            <div class="form-group">
+                <label>Nombre y Apellidos:</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Ej: Juan Pérez" required>
+            </div>
+            
+            <div class="form-group">
+                <label>¿Asistirás?</label>
+                <select name="asistencia" id="asistencia" required onchange="checkAsistencia(this.value)">
+                    <option value="">Selecciona...</option>
+                    <option value="Sí, asistiré con mucho gusto">Sí, ¡allí estaré!</option>
+                    <option value="No podré asistir">Lamentablemente no podré ir</option>
+                </select>
+            </div>
+            
+            <div id="detallesAsistencia">
+                <div class="form-group">
+                    <label>¿Cuántos seréis en total?:</label>
+                    <input type="number" name="acompanantes" id="acompanantes" min="1" value="1">
+                </div>
+                <div class="form-group">
+                    <label>¿Plaza de autobús?</label>
+                    <select name="autobus" id="autobus">
+                        <option value="No necesito autobús">No, voy por mi cuenta</option>
+                        <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
+                        <option value="Sólo Ida">Sólo Ida</option>
+                        <option value="Sólo Vuelta">Sólo Vuelta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>¿Alguna alergia, intolerancia o menú especial?</label>
+                    <textarea name="alergias" id="alergias" rows="2" placeholder="Ej: Celíaco, Vegano..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>🎵 ¿Qué canción no puede faltar?</label>
+                <input type="text" name="cancion" id="cancion" placeholder="Artista - Título">
+            </div>
+            
+            <button type="submit" id="btn-enviar" class="boton" style="width: 100%;">Confirmar Asistencia</button>
+            
+            <div id="mensaje-estado"></div>
+        </form>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        try { AOS.init({ duration: 1200, once: true }); } catch(e) { console.log(e); }
+
+        function enterWeb() {
+            const splash = document.getElementById('splash-screen');
+            if(splash) {
+                splash.style.opacity = '0';
+                splash.style.pointerEvents = 'none';
+                setTimeout(() => { splash.style.display = 'none'; }, 800);
+            }
+            
+            const player = document.getElementById('musicPlayer');
+            if(player) player.style.display = 'flex';
+            
+            try {
+                const audio = document.getElementById("bgMusic");
+                if(audio) audio.play();
+            } catch(err) { console.log("Audio play blocked:", err); }
+        }
+
+        function toggleMusic() {
+            const audio = document.getElementById("bgMusic");
+            const icon = document.getElementById("musicIcon");
+            if (!audio || !icon) return;
+            
+            if (audio.paused) { 
+                audio.play(); 
+                icon.innerText = "||"; 
+            } else { 
+                audio.pause(); 
+                icon.innerText = "▶"; 
+            }
+        }
+
+        function checkAsistencia(val) {
+            const div = document.getElementById("detallesAsistencia");
+            if(div) div.style.display = (val === "No podré asistir") ? "none" : "block";
+        }
+
+        function enviarFormulario(event) {
+            event.preventDefault();
+            const boton = document.getElementById("btn-enviar");
+            const estado = document.getElementById("mensaje-estado");
+            const form = document.getElementById("rsvpForm");
+            if(!boton || !form || !estado) return;
+            
+            boton.innerText = "Enviando respuesta...";
+            boton.disabled = true;
+            
+            const urlScript = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec";
+            const datos = new URLSearchParams(new FormData(form));
+            
+            fetch(urlScript, {
+                method: 'POST',
+                body: datos.toString(),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                mode: 'no-cors'
+            })
+            .then(() => {
+                estado.innerText = "Tu respuesta se ha guardado correctamente. ¡Muchas gracias! ✨";
+                estado.className = "exito";
+                estado.style.display = "block";
+                boton.innerText = "¡Confirmado!";
+                form.reset();
+                const divDetalles = document.getElementById("detallesAsistencia");
+                if(divDetalles) divDetalles.style.display = "block";
+            })
+            .catch((error) => {
+                console.error("Error:", error);
+                estado.innerText = "Hubo un problema temporal. Por favor, vuelve a intentarlo.";
+                estado.className = "error";
+                estado.style.display = "block";
+                boton.disabled = false;
+                boton.innerText = "Confirmar Asistencia";
+            });
+        }
+
+        // LÒGICA DEL COMPTE ENRERE REVISADA I SENSE BIETES DE TEXT ESTRANYES
+        const targetDate = new Date("November 14, 2026 11:00:00").getTime();
+        
+        setInterval(function() {
+            const now = new Date().getTime();
+            const diff = targetDate - now;
+            
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const elD = document.getElementById("days");
+            const elH = document.getElementById("hours");
+            const elM
