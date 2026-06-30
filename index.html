@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,15 +81,11 @@
             border: 1px solid #ffffff;
         }
 
-        /* 2. SUBPORTADA TOTALMENT CENTRADA (CANVIADA A LA IMATGE 'ANILLO') */
+        /* 2. SUBPORTADA CON IMAGEN FIXA 'ANILLO.JPG' */
         .franja-hero { 
             position: relative;
             background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-                              url('anillo.jpg'),
-                              url('anillo.jpeg'),
-                              url('anillo.png'),
-                              url('ANILLO.jpg'),
-                              url('ANILLO.JPEG');
+                              url('anillo.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -284,7 +280,7 @@
         }
         .boton:hover { background-color: transparent; color: #4a453f !important; }
 
-        /* REGLS D'ÈXIT I ERROR */
+        /* ESTILOS ÉXITO Y ERROR */
         .exito { background-color: #e6ede0; color: #435b31; border: 1px solid #cce0bc; }
         .error { background-color: #fbecee; color: #8a3441; border: 1px solid #f3cfd4; }
     </style>
@@ -306,7 +302,7 @@
         <span id="musicIcon" class="music-icon-bars">||</span>
     </div>
 
-    <!-- 2. PORTADA DE LA WEB (AMB IMATGE ANILLO) -->
+    <!-- 2. PORTADA DE LA WEB (CON IMAGEN ANILLO.JPG) -->
     <div class="franja-hero">
         <div class="hero-content">
             <h3 class="iniciales-hero" data-aos="fade-up" data-aos-duration="1200">M<span>&</span>A</h3>
@@ -354,64 +350,64 @@
         <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="200">Subir Fotos</a>
     </div>
 
-    <!-- 4. FRANJA DE CONFIRMACIÓ - ESTIL MINIMALISTA (image_82bf56.png) -->
+    <!-- 4. FORMULARIO EN CASTELLANO - ESTILO MINIMALISTA -->
     <div class="franja franja-blanca" style="background-color: #faf8f5;">
-        <span style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: #8e8376; font-weight: 400; display: block; margin-bottom: 10px;">CONFIRMA L'ASSISTÈNCIA</span>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 3rem; font-weight: 400; color: #4e463d; margin-top: 0; margin-bottom: 40px; letter-spacing: 0;">Hi seràs?</h2>
+        <span style="font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: #8e8376; font-weight: 400; display: block; margin-bottom: 10px;">CONFIRMA TU ASISTENCIA</span>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 3rem; font-weight: 400; color: #4e463d; margin-top: 0; margin-bottom: 40px; letter-spacing: 0;">¿Nos acompañas?</h2>
         
         <form class="form-rsvp" id="rsvpForm" onsubmit="enviarFormulario(event)" style="text-align: left; background: transparent; padding: 0; margin-top: 20px; border: none; width: 100%; max-width: 600px;">
             
-            <!-- NOM I COGNOMS -->
+            <!-- NOMBRE Y APELLIDOS -->
             <div class="form-group" style="margin-bottom: 30px;">
-                <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Nom i Cognoms *</label>
-                <input type="text" name="nombre" id="nombre" placeholder="El teu nom complet" required style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
+                <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Nombre y Apellidos *</label>
+                <input type="text" name="nombre" id="nombre" placeholder="Tu nombre completo" required style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
             </div>
             
-            <!-- CONFIRMA L'ASSISTÈNCIA -->
+            <!-- CONFIRMA ASISTENCIA -->
             <div class="form-group" style="margin-bottom: 30px;">
-                <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Confirma l'assistència *</label>
+                <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Asistirás? *</label>
                 <select name="asistencia" id="asistencia" required onchange="checkAsistencia(this.value)" style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%234e463d\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 20px center;">
-                    <option value="">Selecciona una opció</option>
-                    <option value="Sí, asistiré con mucho gusto">Sí, i tant! Allà estaré</option>
-                    <option value="No podré asistir">Lamentablement no podré anar</option>
+                    <option value="">Selecciona una opción</option>
+                    <option value="Sí, asistiré con mucho gusto">¡Sí, claro! Allí estaré</option>
+                    <option value="No podré asistir">Lamentablemente no podré ir</option>
                 </select>
             </div>
             
-            <!-- SECCIÓ DINÀMICA (S'AMAGA SI TRIA QUE NO) -->
+            <!-- SECCIÓN DINÁMICA -->
             <div id="detallesAsistencia">
-                <!-- AL·LÈRGIA O INTOLERÀNCIA -->
+                <!-- ALERGIAS -->
                 <div class="form-group" style="margin-bottom: 30px;">
-                    <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Al·lèrgia o intolerància alimentària?</label>
-                    <input type="text" name="alergias" id="alergias" placeholder="Gluten, lactosa, fruits secs..." style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
+                    <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Alguna alergia o intolerancia alimentaria?</label>
+                    <input type="text" name="alergias" id="alergias" placeholder="Gluten, lactosa, frutos secos..." style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
                 </div>
                 
                 <!-- AUTOBÚS -->
                 <div class="form-group" style="margin-bottom: 30px;">
-                    <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Autobús *</label>
+                    <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Servicio de Autobús *</label>
                     <select name="autobus" id="autobus" style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%234e463d\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 20px center;">
-                        <option value="No necesito autobús">On agafaràs l'autobús?</option>
-                        <option value="Sí, ida y vuelta">Sí, anada i tornada</option>
-                        <option value="Sólo Ida">Només Anada</option>
-                        <option value="Sólo Vuelta">Només Tornada</option>
-                        <option value="No necesito autobús">No el necessito (voy por mi cuenta)</option>
+                        <option value="No necesito autobús">¿Necesitas plaza de autobús?</option>
+                        <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
+                        <option value="Sólo Ida">Sólo Ida</option>
+                        <option value="Sólo Vuelta">Sólo Vuelta</option>
+                        <option value="No necesito autobús">No lo necesito (voy por mi cuenta)</option>
                     </select>
                 </div>
             </div>
 
-            <!-- QUINA CANÇÓ NO POT FALTAR -->
+            <!-- QUÉ CANCIÓN NO PUEDE FALTAR -->
             <div class="form-group" style="margin-bottom: 30px;">
-                <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Quina cançó no pot faltar a la festa? *</label>
-                <input type="text" name="cancion" id="cancion" placeholder="La teva cançó preferida!" style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
+                <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Qué canción no puede faltar en la fiesta? *</label>
+                <input type="text" name="cancion" id="cancion" placeholder="¡Tu canción favorita para bailar!" style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
             </div>
 
-            <!-- UN MISSATGE PER ALS NUVIS -->
+            <!-- UN MENSAJE PARA LOS NOVIOS -->
             <div class="form-group" style="margin-bottom: 35px;">
-                <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Un missatge per als nuvis?</label>
-                <textarea name="acompanantes" id="acompanantes" rows="4" placeholder="Escriu el teu missatge..." style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d; resize: vertical; vertical-align: top;"></textarea>
+                <label style="display: block; font-size: 0.75rem; font-weight: 600; margin-bottom: 10px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Un mensaje para los novios?</label>
+                <textarea name="acompanantes" id="acompanantes" rows="4" placeholder="Escribe tu mensaje aquí..." style="width: 100%; padding: 16px 20px; border: none; border-radius: 8px; background-color: #f1ede7; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; color: #4e463d; resize: vertical; vertical-align: top;"></textarea>
             </div>
             
-            <!-- BOTÓ ENVIAR SENSE MARGES INTERNS (ESTIL IMAGE_82BF56.PNG) -->
-            <button type="submit" id="btn-enviar" style="width: 100%; background-color: transparent; color: #4e463d; padding: 20px; text-decoration: none; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 500; transition: all 0.3s; border: 1px solid #4e463d; cursor: pointer; display: block; text-align: center;">Enviar Confirmació</button>
+            <!-- BOTÓN ENVIAR -->
+            <button type="submit" id="btn-enviar" style="width: 100%; background-color: transparent; color: #4e463d; padding: 20px; text-decoration: none; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 500; transition: all 0.3s; border: 1px solid #4e463d; cursor: pointer; display: block; text-align: center;">Enviar Confirmación</button>
             
             <div id="mensaje-estado" style="display: none; padding: 15px; margin-top: 25px; text-align: center; font-size: 0.9rem; border-radius: 8px; font-family: 'Montserrat', sans-serif;"></div>
         </form>
@@ -419,14 +415,12 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inicialització de les animacions AOS
         try { 
             AOS.init({ duration: 1200, once: true }); 
         } catch(e) { 
-            console.log("Error carregant AOS:", e); 
+            console.log("Error cargando AOS:", e); 
         }
 
-        // CONTROL PANTALLA INICIAL I AUDIO
         var music = document.getElementById("bgMusic");
         var musicPlayer = document.getElementById("musicPlayer");
         var musicIcon = document.getElementById("musicIcon");
@@ -445,7 +439,7 @@
                 music.play().then(function() {
                     musicIcon.innerText = "||";
                 }).catch(function(error) {
-                    console.log("Reproducció bloquejada pel navegador. S'activarà en interactuar.");
+                    console.log("Reproducción bloqueada por el navegador.");
                     musicIcon.innerText = "►";
                 });
             }
@@ -462,7 +456,6 @@
             }
         }
 
-        // COMPTE ENRERE (14 de Novembre de 2026)
         var targetDate = new Date("Nov 14, 2026 11:00:00").getTime();
 
         var countdownInterval = setInterval(function() {
@@ -489,7 +482,6 @@
             if(document.getElementById("seconds")) document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
         }, 1000);
 
-        // FORMULARI INTERACTIU
         function checkAsistencia(value) {
             var detalles = document.getElementById("detallesAsistencia");
             if (detalles) {
@@ -497,7 +489,6 @@
             }
         }
 
-        // ENVIAMENT DE DADES REAL AL TEU GOOGLE WEB APP SCRIPT
         function enviarFormulario(event) {
             event.preventDefault();
             var boton = document.getElementById("btn-enviar");
@@ -505,10 +496,9 @@
             var form = document.getElementById("rsvpForm");
             if(!boton || !form || !estado) return;
             
-            boton.innerText = "ENVIANT RESPOSTA...";
+            boton.innerText = "ENVIANDO RESPUESTA...";
             boton.disabled = true;
             
-            // La teva URL real de Google Apps Script vinculada
             var urlScript = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec";
             var datos = new URLSearchParams(new FormData(form));
             
@@ -519,21 +509,21 @@
                 mode: 'no-cors' 
             })
             .then(function() {
-                estado.innerText = "La teva resposta s'ha guardat correctament. Moltes gràcies! ✨";
+                estado.innerText = "¡Tu respuesta se ha guardado correctamente. Muchas gracias! ✨";
                 estado.className = "exito";
                 estado.style.display = "block";
-                boton.innerText = "CONFIRMAT!";
+                boton.innerText = "¡CONFIRMADO!";
                 form.reset();
                 var divDetalles = document.getElementById("detallesAsistencia");
                 if(divDetalles) divDetalles.style.display = "block";
             })
             .catch(function(error) {
-                console.error("Error detectat:", error);
-                estado.innerText = "Hi ha hagut un problema temporal. Torna-ho a intentar.";
+                console.error("Error:", error);
+                estado.innerText = "Ha ocurrido un problema temporal. Por favor, vuelve a intentarlo.";
                 estado.className = "error";
                 estado.style.display = "block";
                 boton.disabled = false;
-                boton.innerText = "Enviar Confirmació";
+                boton.innerText = "Enviar Confirmación";
             });
         }
     </script>
