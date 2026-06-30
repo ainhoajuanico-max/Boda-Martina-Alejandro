@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Martina & Alejandro 14.11.2026</title>
     
-    <!-- Fuentes de Alta Elegancia (Estilo Vogue / Boda Premium) -->
+    <!-- Fuentes de Alta Elegancia (Estilo Boda Premium / Minimalista) -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght=200;300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;1,300&family=Montserrat:wght=200;300;400;500&family=Playfair+Display:ital,wght=0,400;1,400&display=swap');
     </style>
     
     <!-- Librería de Animaciones CSS -->
@@ -29,7 +29,7 @@
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+            background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
                               url('PORTADA.jpg'), 
                               url('portada.jpg'), 
                               url('PORTADA.JPEG'), 
@@ -67,7 +67,7 @@
             background-color: rgba(255, 255, 255, 0.95);
             color: #2c2a27;
             padding: 16px 45px;
-            border-radius: 0px; /* Estilo minimalista recto */
+            border-radius: 0px; 
             font-weight: 400;
             letter-spacing: 3px;
             cursor: pointer;
@@ -83,7 +83,7 @@
             border: 1px solid #ffffff;
         }
 
-        /* 2. FRANJA HERO (SUBPORTADA CLONADA DE LA IMAGEN REFERENCIA) */
+        /* 2. FRANJA HERO (SUBPORTADA ESTILO IMAGE_66A014.JPG) */
         .franja-hero { 
             position: relative;
             background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
@@ -166,7 +166,7 @@
             background-color: rgba(255, 255, 255, 0.6);
         }
 
-        /* ICONO DE MÚSICA IDÉNTICO A LA FOTO (Círculo oscuro discreto con barra de pausa) */
+        /* ICONO DE MÚSICA IDÉNTICO A LA FOTO (Círculo oscuro con botón de pausa) */
         .music-player {
             position: fixed; 
             bottom: 30px; 
@@ -286,12 +286,12 @@
         <source src="musica.mp3.mp3" type="audio/mpeg">
     </audio>
 
-    <!-- ICONO DE MÚSICA PREMIUM (IDÉNTICO AL BOTÓN DE PAUSA DE LA FOTO) -->
+    <!-- ICONO DE MÚSICA IDÉNTICO AL BOTÓN DE PAUSA DE LA FOTO -->
     <div class="music-player" id="musicPlayer" style="display:none;" onclick="toggleMusic()">
         <span id="musicIcon" class="music-icon-bars">||</span>
     </div>
 
-    <!-- FRANJA 1: SUBPORTADA CLONADA SEGÚN LA IMAGEN DE REFERENCIA -->
+    <!-- FRANJA 1: SUBPORTADA ESTILO IMAGE_66A014.JPG -->
     <div class="franja-hero">
         <h3 class="iniciales-hero" data-aos="fade-up" data-aos-duration="1200">M<span>&</span>A</h3>
         <div class="nombres-hero" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200">Martina i Alejandro</div>
@@ -455,7 +455,7 @@
             })
             .then(() => {
                 estado.innerText = "Tu respuesta se ha guardado correctamente. ¡Muchas gracias! ✨";
-                estado.className = "mensaje-estado exito";
+                estado.className = "exito";
                 estado.style.display = "block";
                 boton.innerText = "¡Confirmado!";
                 form.reset();
@@ -464,18 +464,29 @@
             .catch((error) => {
                 console.error("Error:", error);
                 estado.innerText = "Hubo un problema temporal. Por favor, vuelve a intentarlo.";
-                estado.className = "mensaje-estado error";
+                estado.className = "error";
                 estado.style.display = "block";
                 boton.disabled = false;
                 boton.innerText = "Confirmar Asistencia";
             });
         }
 
-        // CUENTA ATRÁS (Calculada para el 14 de Noviembre de 2026)
+        // CUENTA ATRÁS COMPLETA I SENSE ERRORS
         const targetDate = new Date("November 14, 2026 11:00:00").getTime();
         setInterval(function() {
             const now = new Date().getTime();
             const diff = targetDate - now;
-            document.getElementById("days").innerText = String(Math.floor(diff / (1000*60*60*24))).padStart(2, '0');
-            document.getElementById("hours").innerText = String(Math.floor((diff % (1000*60*60*24)) / (1000*60*60))).padStart(2, '0');
-Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
+            
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = String(d >= 0 ? d : 0).padStart(2, '0');
+            document.getElementById("hours").innerText = String(h >= 0 ? h : 0).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(m >= 0 ? m : 0).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(s >= 0 ? s : 0).padStart(2, '0');
+        }, 1000);
+    </script>
+</body>
+</html>
