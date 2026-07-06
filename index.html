@@ -23,7 +23,7 @@
             overflow-x: hidden;
         }
 
-        /* 1. PANTALLA DE BENVINGUDA (PORTADA SPLASH) */
+        /* 1. PANTALLA DE BIENVENIDA (PORTADA SPLASH) */
         #splash-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100vh;
@@ -61,27 +61,52 @@
             opacity: 0.9;
         }
         
-        .btn-entrar {
-            background-color: rgba(255, 255, 255, 0.95);
-            color: #2c2a27;
-            padding: 16px 45px;
-            border-radius: 0px; 
-            font-weight: 400;
-            letter-spacing: 3px;
+        /* CONTENEDOR CLICABLE DE LA INVITACIÓN */
+        .wrapper-entrar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             cursor: pointer;
-            text-transform: uppercase;
-            font-size: 0.75rem;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-            transition: all 0.4s;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 15px;
+            transition: transform 0.3s ease;
         }
-        .btn-entrar:hover { 
-            background-color: transparent;
-            color: #ffffff;
-            border: 1px solid #ffffff;
+        .wrapper-entrar:hover {
+            transform: scale(1.03);
         }
 
-        /* 2. SUBPORTADA CON IMAGEN FIXA 'ANILLO.JPG' */
+        .text-entrar {
+            color: #ffffff;
+            font-size: 0.8rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+        }
+
+        /* ICONO DE LA MANO CON ANIMACIÓN DE PARPADEO (PULSE) */
+        .icona-ma {
+            width: 45px;
+            height: 45px;
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            filter: drop-shadow(0px 2px 5px rgba(0,0,0,0.3));
+            animation: parpedeig 2s infinite ease-in-out;
+        }
+
+        @keyframes parpedeig {
+            0% { opacity: 0.3; transform: scale(0.96); }
+            50% { opacity: 1; transform: scale(1.04); }
+            100% { opacity: 0.3; transform: scale(0.96); }
+        }
+
+        /* 2. SUBPORTADA CON IMAGEN FIJA 'ANILLO.JPG' */
         .franja-hero { 
             position: relative;
             background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
@@ -144,7 +169,7 @@
             margin-bottom: 25px;
         }
 
-        /* COMPTE ENRERE */
+        /* CUENTA ATRÁS */
         .countdown { 
             display: flex; 
             justify-content: center; 
@@ -198,7 +223,7 @@
             background-color: rgba(255, 255, 255, 0.5);
         }
 
-        /* BOTÓ DE MÚSICA DISCRET */
+        /* BOTÓN DE MÚSICA DISCRETO */
         .music-player {
             position: fixed; 
             bottom: 30px; 
@@ -230,7 +255,7 @@
             margin-left: -1px;
         }
 
-        /* FRANGES SECCIONS */
+        /* FRANJAS SECCIONES */
         .franja {
             padding: 100px 20px;
             display: flex;
@@ -287,11 +312,20 @@
 </head>
 <body>
 
-    <!-- 1. PANTALLA DE BENVINGUDA -->
+    <!-- 1. PANTALLA DE BIENVENIDA -->
     <div id="splash-screen">
         <h1>Martina & Alejandro</h1>
         <p>14 . 11 . 2026</p>
-        <button class="btn-entrar" onclick="enterWeb()">Ingresar</button>
+        
+        <!-- ELEMENTO MODIFICADO SEGÚN LA IMAGEN -->
+        <button class="wrapper-entrar" onclick="enterWeb()">
+            <span class="text-entrar">Toca per obrir la invitació</span>
+            <!-- Icono SVG vectorial limpio de la mano haciendo clic -->
+            <svg class="icona-ma" viewBox="0 0 24 24">
+                <path d="M12 11V4.5a1.5 1.5 0 0 0-3 0v8.25M12 11a1.5 1.5 0 0 1 3 0v1.25M12 11V9.5a1.5 1.5 0 0 1 3 0v3M15 12.5V11a1.5 1.5 0 0 1 3 0v3.25m-9-3.5h-.25a1.75 1.75 0 0 0-1.75 1.75V14a6 6 0 0 0 6 6h2.5a4 4 0 0 0 4-4v-1.75M9 7.75v4.5"/>
+                <circle cx="10.5" cy="4.5" r="2.5" stroke-dasharray="2 2"/>
+            </svg>
+        </button>
     </div>
 
     <audio id="bgMusic" loop preload="auto">
@@ -306,7 +340,7 @@
     <div class="franja-hero">
         <div class="hero-content">
             <h3 class="iniciales-hero" data-aos="fade-up" data-aos-duration="1200">M<span>&</span>A</h3>
-            <div class="nombres-hero" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">Martina i Alejandro</div>
+            <div class="nombres-hero" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1200">Martina y Alejandro</div>
             <div class="fecha-hero" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1200">14 . 11 . 2026</div>
 
             <div class="countdown" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1200">
@@ -318,12 +352,12 @@
         </div>
 
         <div class="desplaca-container" data-aos="fade-up" data-aos-delay="800">
-            <span class="text-desplaca">DESPLAÇA</span>
+            <span class="text-desplaca">DESPLIEGA</span>
             <div class="linea-desplaca"></div>
         </div>
     </div>
 
-    <!-- 3. SECCIONS D'INFORMACIÓ -->
+    <!-- 3. SECCIONES DE INFORMACIÓN -->
     <div class="franja franja-blanca">
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
         <p data-aos="fade-up" data-aos-delay="100">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
