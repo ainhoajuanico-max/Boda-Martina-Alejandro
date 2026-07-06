@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -137,7 +137,6 @@
             animation: suavidadParpadeo 2.5s infinite ease-in-out;
         }
 
-        /* Animación de desvanecimiento sutil */
         @keyframes suavidadParpadeo {
             0% { opacity: 0.25; }
             50% { opacity: 0.95; }
@@ -295,7 +294,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* NUEVOS ESTILOS ESPECÍFICOS PARA LA HISTORIA */
+        /* ESTILOS DE LA HISTORIA */
         .subtitulo-historia {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.65rem;
@@ -322,7 +321,50 @@
             max-width: unset;
             text-align: inherit;
             margin-bottom: 20px;
-            text-indent: 25px; /* Sangría refinada en la primera línea */
+            text-indent: 25px;
+        }
+
+        /* NUEVOS ESTILOS PARA LA GALERÍA / COLLAGE DE FOTOS ASIMÉTRICO */
+        .galeria-container {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px 0;
+            text-align: justify; /* Truco clásico para repartir columnas inline-block elegantemente */
+            font-size: 0.1px; /* Elimina espacios fantasmas entre inline-blocks */
+        }
+        /* Esto hace que el text-align: justify funcione correctamente en la última línea */
+        .galeria-container:after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+        .columna-fotos {
+            display: inline-block;
+            vertical-align: top;
+            width: 23%; /* 4 columnas que ocupan casi el 25% cada una con aire intermedio */
+            margin-bottom: 15px;
+        }
+        .columna-fotos img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px; /* Separación vertical interna entre fotos */
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            filter: grayscale(15%); /* Un sutil filtro elegante unificado */
+            transition: all 0.4s ease;
+        }
+        .columna-fotos img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+        /* Ajuste responsivo impecable para teléfonos móviles */
+        @media (max-width: 600px) {
+            .columna-fotos {
+                width: 48%; /* En móviles pasa a ser un precioso grid de 2 columnas de fotos */
+            }
         }
 
         .boton {
@@ -347,7 +389,6 @@
 </head>
 <body>
 
-    <!-- 1. PANTALLA DE BIENVENIDA -->
     <div id="splash-screen">
         <h3 class="iniciales-estilo">M<span>&</span>A</h3>
         <div class="nombres-estilo">Martina y Alejandro</div>
@@ -355,7 +396,6 @@
         
         <div class="linea-separadora"></div>
         
-        <!-- BOTÓN DE INGRESO CON FLECHA MINIMALISTA -->
         <button class="wrapper-entrar" onclick="enterWeb()">
             <span class="text-entrar">Toca para abrir la invitación</span>
             <div class="flecha-entrar">↓</div>
@@ -370,7 +410,6 @@
         <span id="musicIcon" class="music-icon-bars">||</span>
     </div>
 
-    <!-- 2. PORTADA DE LA WEB -->
     <div class="franja-hero">
         <div class="hero-content">
             <h3 class="iniciales-estilo" data-aos="fade-up" data-aos-duration="1200">M<span>&</span>A</h3>
@@ -391,7 +430,6 @@
         </div>
     </div>
 
-    <!-- NUEVA SECCIÓN: NUESTRA HISTORIA -->
     <div class="franja franja-blanca">
         <span class="subtitulo-historia" data-aos="fade-up">Nuestra historia</span>
         <div class="texto-historia" data-aos="fade-up" data-aos-delay="200">
@@ -401,83 +439,133 @@
         </div>
     </div>
 
-    <!-- 3. SECCIONES DE INFORMACIÓN -->
-    <div class="franja franja-arena">
+    <div class="franja franja-arena" style="padding-top:60px; padding-bottom:60px;">
+        
+        <div class="galeria-container" data-aos="fade-up">
+            <div class="columna-fotos">
+                <img src="foto1.jpg" alt="Moment">
+                <img src="foto2.jpg" alt="Moment">
+                <img src="foto3.jpg" alt="Moment">
+            </div>
+            <div class="columna-fotos">
+                <img src="foto4.jpg" alt="Moment">
+                <img src="foto5.jpg" alt="Moment">
+            </div>
+            <div class="columna-fotos">
+                <img src="foto6.jpg" alt="Moment">
+                <img src="foto7.jpg" alt="Moment">
+                <img src="foto8.jpg" alt="Moment">
+            </div>
+            <div class="columna-fotos">
+                <img src="foto9.jpg" alt="Moment">
+                <img src="foto10.jpg" alt="Moment">
+            </div>
+        </div>
+
+        <div style="margin: 40px auto; text-align:center;" data-aos="fade-up">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 4px; text-transform: uppercase; color: #8e8376; display:block; margin-bottom: 5px;">ELS NOSTRES MOMENTS</span>
+            <h2 style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.2rem; font-weight: 400; color: #4a453f; margin:0;">Una mica de la nostra història</h2>
+            <div style="width: 25px; height: 0.5px; background-color: #bcada1; margin: 15px auto 0 auto;"></div>
+        </div>
+
+        <div class="galeria-container" data-aos="fade-up" data-aos-delay="100">
+            <div class="columna-fotos">
+                <img src="foto11.jpg" alt="Moment">
+                <img src="foto12.jpg" alt="Moment">
+                <img src="foto13.jpg" alt="Moment">
+            </div>
+            <div class="columna-fotos">
+                <img src="foto14.jpg" alt="Moment">
+                <img src="foto15.jpg" alt="Moment">
+            </div>
+            <div class="columna-fotos">
+                <img src="foto16.jpg" alt="Moment">
+                <img src="foto17.jpg" alt="Moment">
+                <img src="foto18.jpg" alt="Moment">
+            </div>
+            <div class="columna-fotos">
+                <img src="foto19.jpg" alt="Moment">
+                <img src="foto20.jpg" alt="Moment">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="franja franja-blanca">
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
         <p data-aos="fade-up" data-aos-delay="100">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
         <p data-aos="fade-up" data-aos-delay="200"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
         <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Ver ubicación</a>
     </div>
 
-    <div class="franja franja-blanca">
+    <div class="franja franja-arena">
         <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
         <p data-aos="fade-up" data-aos-delay="100">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
         <p data-aos="fade-up" data-aos-delay="200"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
         <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Cómo llegar</a>
     </div>
 
-    <div class="franja franja-arena">
+    <div class="franja franja-blanca">
         <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
         <p data-aos="fade-up" data-aos-delay="100">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
         <p data-aos="fade-up" data-aos-delay="200"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
     </div>
 
-    <div class="franja franja-blanca">
+    <div class="franja franja-arena">
         <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
         <p data-aos="fade-up" data-aos-delay="100">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
         <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="200">Subir Fotos</a>
     </div>
 
-    <!-- 4. FORMULARIO DE CONFIRMACIÓN -->
-    <div class="franja franja-arena" style="background-color: #faf8f5;">
-        <span style="font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: #8e8376; font-weight: 400; display: block; margin-bottom: 8px;">CONFIRMA TU ASISTENCIA</span>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 2.4rem; font-weight: 400; color: #4e463d; margin-top: 0; margin-bottom: 35px; letter-spacing: 0;">¿Nos acompañas?</h2>
+    <div class="franja franja-blanca" style="background-color: #faf8f5;">
+        <span style="font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: #8e8376; font-weight: 400; display: block; margin-bottom: 8px;">CONFIRMA L'ASSISTÈNCIA</span>
+        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 2.4rem; font-weight: 400; color: #4e463d; margin-top: 0; margin-bottom: 35px; letter-spacing: 0;">Hi seràs?</h2>
         
         <form class="form-rsvp" id="rsvpForm" onsubmit="enviarFormulario(event)" style="text-align: left; background: transparent; padding: 0; margin-top: 15px; border: none; width: 100%; max-width: 550px;">
             
             <div class="form-group" style="margin-bottom: 25px;">
-                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Nombre y Apellidos *</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Tu nombre completo" required style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
+                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Nom i Cognoms *</label>
+                <input type="text" name="nombre" id="nombre" placeholder="El teu nom complet" required style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
             </div>
             
             <div class="form-group" style="margin-bottom: 25px;">
-                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Asistirás? *</label>
+                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Confirma l'assistència *</label>
                 <select name="asistencia" id="asistencia" required onchange="checkAsistencia(this.value)" style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%234e463d\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 18px center;">
-                    <option value="">Selecciona una opción</option>
-                    <option value="Sí, asistiré con mucho gusto">¡Sí, claro! Allí estaré</option>
-                    <option value="No podré asistir">Lamentablemente no podré ir</option>
+                    <option value="">Selecciona una opció</option>
+                    <option value="Sí, asistiré con mucho gusto">Sí, i tant! Allà estaré</option>
+                    <option value="No podré asistir">Lamentablement no podré anar</option>
                 </select>
             </div>
             
             <div id="detallesAsistencia">
                 <div class="form-group" style="margin-bottom: 25px;">
-                    <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Alguna alergia o intolerancia alimentaria?</label>
-                    <input type="text" name="alergias" id="alergias" placeholder="Gluten, lactosa, frutos secos..." style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
+                    <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Al·lèrgia o intolerància alimentària?</label>
+                    <input type="text" name="alergias" id="alergias" placeholder="Gluten, lactosa, fruits secs..." style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
                 </div>
                 
                 <div class="form-group" style="margin-bottom: 25px;">
-                    <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Servicio de Autobús *</label>
+                    <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Autobús *</label>
                     <select name="autobus" id="autobus" style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%234e463d\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 18px center;">
-                        <option value="No necesito autobús">¿Necesitas plaza de autobús?</option>
-                        <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
-                        <option value="Sólo Ida">Sólo Ida</option>
-                        <option value="Sólo Vuelta">Sólo Vuelta</option>
-                        <option value="No necesito autobús">No lo necesito (voy por mi cuenta)</option>
+                        <option value="No necesito autobús">On agafaràs l'autobús?</option>
+                        <option value="Sí, ida y vuelta">Sí, anada i tornada</option>
+                        <option value="Sólo Ida">Només Anada</option>
+                        <option value="Sólo Vuelta">Només Tornada</option>
+                        <option value="No necesito autobús">No el necessito (vaig pel meu compte)</option>
                     </select>
                 </div>
             </div>
 
             <div class="form-group" style="margin-bottom: 25px;">
-                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Qué canción no puede faltar en la fiesta? *</label>
-                <input type="text" name="cancion" id="cancion" placeholder="¡Tu canción favorita para bailar!" style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
+                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Quina cançó no pot faltar a la festa? *</label>
+                <input type="text" name="cancion" id="cancion" placeholder="La teva cançó preferida!" style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
             </div>
 
             <div class="form-group" style="margin-bottom: 30px;">
-                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Un mensaje para los novios?</label>
-                <textarea name="acompanantes" id="acompanantes" rows="4" placeholder="Escribe tu mensaje aquí..." style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d; resize: vertical; vertical-align: top;"></textarea>
+                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Un missatge per als nuvis?</label>
+                <textarea name="acompanantes" id="acompanantes" rows="4" placeholder="Escriu el teu missatge..." style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d; resize: vertical; vertical-align: top;"></textarea>
             </div>
             
-            <button type="submit" id="btn-enviar" style="width: 100%; background-color: transparent; color: #4e463d; padding: 16px; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 500; transition: all 0.3s; border: 1px solid #4e463d; cursor: pointer; display: block; text-align: center;">Enviar Confirmación</button>
+            <button type="submit" id="btn-enviar" style="width: 100%; background-color: transparent; color: #4e463d; padding: 16px; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 500; transition: all 0.3s; border: 1px solid #4e463d; cursor: pointer; display: block; text-align: center;">Enviar Confirmació</button>
             
             <div id="mensaje-estado" style="display: none; padding: 12px; margin-top: 20px; text-align: center; font-size: 0.8rem; border-radius: 6px; font-family: 'Montserrat', sans-serif;"></div>
         </form>
