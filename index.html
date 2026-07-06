@@ -391,6 +391,27 @@
 
         .exito { background-color: #e6ede0; color: #435b31; border: 1px solid #cce0bc; }
         .error { background-color: #fbecee; color: #8a3441; border: 1px solid #f3cfd4; }
+        /* --- OPTIMIZACIÓN DEL COLLAGE PARA MÓVILES --- */
+@media screen and (max-width: 768px) {
+    /* Buscamos el contenedor de tus imágenes. 
+       Si tu clase se llama diferente (ej. .collage o .galeria), cambia el nombre aquí */
+    .collage-container, .gallery-container, [class*="collage"] {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        flex-direction: row !important;
+        gap: 8px !important; /* Espacio sutil entre fotos */
+        padding: 10px !important;
+    }
+
+    /* Forzamos a que cada imagen ocupe exactamente la mitad de la pantalla (2 por fila) */
+    .collage-container img, .gallery-container img, [class*="collage"] img, [class*="gallery"] div {
+        width: calc(50% - 4px) !important; /* Ajusta al 50% restando el espacio del gap */
+        flex: 1 0 calc(50% - 4px) !important;
+        height: 140px !important; /* Altura fija uniforme para que no queden escalonadas */
+        object-fit: cover !important; /* Recorta la imagen mágicamente para que no se deforme ni estire */
+        border-radius: 4px !important;
+    }
+}
     </style>
 </head>
 <body>
