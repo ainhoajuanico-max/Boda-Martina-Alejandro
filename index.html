@@ -324,7 +324,7 @@
             text-indent: 25px;
         }
 
-        /* ESTILOS DE LA GALERÍA DE FOTOS ASIMÉTRICA (ORGANIZADO POR FILAS CON PATRÓN ALTERNO) */
+        /* ESTILOS DE LA GALERÍA DE FOTOS ASIMÉTRICA */
         .galeria-container {
             width: 100%;
             max-width: 900px;
@@ -335,14 +335,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px; /* Espaciado entre fotos */
-            margin-bottom: 15px; /* Separación vertical entre filas */
+            gap: 15px;
+            margin-bottom: 15px;
         }
         .fila-fotos .foto {
             object-fit: cover;
             border-radius: 2px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            filter: grayscale(15%); /* Un sutil filtro elegante unificado */
+            filter: grayscale(15%);
             transition: all 0.4s ease;
         }
         .fila-fotos .foto:hover {
@@ -350,26 +350,33 @@
             transform: scale(1.02);
         }
         
-        /* Patrón de 3 fotos (calculado para 3 por fila con gap) */
         .patron-3 {
             flex: 0 0 calc((100% / 3) - 10px);
-            height: 250px; /* Altura fija para coherencia */
+            height: 250px;
         }
         
-        /* Patrón de 2 fotos (calculado para 2 por fila con gap) */
         .patron-2 {
             flex: 0 0 calc(50% - 7.5px);
-            height: 350px; /* Altura fija diferente para asimetría */
+            height: 350px;
         }
         
-        /* Ajuste responsivo impecable para teléfonos móviles */
-        @media (max-width: 600px) {
-            .fila-fotos {
-                gap: 10px;
+        /* Ajuste responsivo impecable y robusto para teléfonos móviles */
+        @media screen and (max-width: 768px) {
+            .galeria-container {
+                padding: 10px !important;
             }
-            .fila-fotos .foto {
-                flex: 0 0 calc(50% - 5px) !important; /* Forzar 2 columnas en móvil siempre */
-                height: 180px !important;
+            .fila-fotos {
+                display: flex !important;
+                flex-wrap: wrap !important;
+                flex-direction: row !important;
+                gap: 8px !important;
+                margin-bottom: 8px !important;
+            }
+            .fila-fotos .foto, .patron-3, .patron-2 {
+                flex: 1 0 calc(50% - 4px) !important;
+                width: calc(50% - 4px) !important;
+                height: 150px !important;
+                filter: grayscale(0%) !important;
             }
         }
 
@@ -391,27 +398,6 @@
 
         .exito { background-color: #e6ede0; color: #435b31; border: 1px solid #cce0bc; }
         .error { background-color: #fbecee; color: #8a3441; border: 1px solid #f3cfd4; }
-        /* --- OPTIMIZACIÓN DEL COLLAGE PARA MÓVILES --- */
-@media screen and (max-width: 768px) {
-    /* Buscamos el contenedor de tus imágenes. 
-       Si tu clase se llama diferente (ej. .collage o .galeria), cambia el nombre aquí */
-    .collage-container, .gallery-container, [class*="collage"] {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        flex-direction: row !important;
-        gap: 8px !important; /* Espacio sutil entre fotos */
-        padding: 10px !important;
-    }
-
-    /* Forzamos a que cada imagen ocupe exactamente la mitad de la pantalla (2 por fila) */
-    .collage-container img, .gallery-container img, [class*="collage"] img, [class*="gallery"] div {
-        width: calc(50% - 4px) !important; /* Ajusta al 50% restando el espacio del gap */
-        flex: 1 0 calc(50% - 4px) !important;
-        height: 140px !important; /* Altura fija uniforme para que no queden escalonadas */
-        object-fit: cover !important; /* Recorta la imagen mágicamente para que no se deforme ni estire */
-        border-radius: 4px !important;
-    }
-}
     </style>
 </head>
 <body>
@@ -424,7 +410,6 @@
         
         <div class="linea-separadora"></div>
         
-        <!-- BOTÓN DE INGRESO CON FLECHA MINIMALISTA -->
         <button class="wrapper-entrar" onclick="enterWeb()">
             <span class="text-entrar">Toca para abrir la invitación</span>
             <div class="flecha-entrar">↓</div>
@@ -459,18 +444,17 @@
             <div class="linea-desplaca"></div>
         </div>
     </div>
-
     <!-- SECCIÓN: NUESTRA HISTORIA -->
     <div class="franja franja-blanca">
         <span class="subtitulo-historia" data-aos="fade-up">Nuestra historia</span>
         <div class="texto-historia" data-aos="fade-up" data-aos-delay="200">
             <p>Creemos que Dios tenía un plan para nosotros mucho antes de que lo descubriéramos. Nuestros caminos se cruzaron desde pequeños en el mismo colegio, pero fue años después, cuando volvimos a coincidir como monitores, cuando nuestra historia comenzó de verdad.</p>
             <p>Alejandro vio a Martina y tuvo claro que quería conocer a esa chica que, sin saberlo, acabaría siendo la mujer de su vida. Con la ayuda de una pequeña cómplice, Alma, mucha labia y un sinfín de excusas para vernos fuera del trabajo, el 22 de diciembre de 2022 descubrimos que estábamos completamente enamorados.</p>
-            <p>Desde entonces hemos construido una relación llena de amor, respeto, risas, viajes, momentos inolvidables y dos familias que ya sentimos como una sola. Hoy, convencidos de que somos el mejor equipo y de que queremos seguir escribiendo esta historia para siempre, damos el paso más importante de nuestras vidas y nos hace muchísima ilusión compartirlo con vosotros.</p>
+            <p>Desde entonces hemos construido una relación llena of amor, respeto, risas, viajes, momentos inolvidables y dos familias que ya sentimos como una sola. Hoy, convencidos de que somos el mejor equipo y de que queremos seguir escribiendo esta historia para siempre, damos el paso más importante de nuestras vidas y nos hace muchísima ilusión compartirlo con vosotros.</p>
         </div>
     </div>
 
-    <!-- SECCIÓN DE IMÁGENES POR FILAS CON PATRÓN ALTERNO (TEXTO CORREGIDO A CASTELLANO) -->
+    <!-- SECCIÓN DE IMÁGENES POR FILAS CON PATRÓN ALTERNO -->
     <div class="franja franja-arena" style="padding-top:60px; padding-bottom:60px;">
         
         <div class="galeria-container">
@@ -487,11 +471,10 @@
                 <img src="foto5.jpg" alt="Moment" class="foto patron-2">
             </div>
             
-            <!-- TÍTULO INTERMEDIO CENTRAL CORREGIDO A CASTELLANO -->
-            <div style="margin: 40px auto; text-align:center;" data-aos="fade-up">
+            <!-- TÍTULO INTERMEDIO CENTRAL LIMPIO (SIN LÍNEAS DUPLICADAS) -->
+            <div style="margin: 45px auto 25px auto; text-align:center;" data-aos="fade-up">
                 <span style="font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 4px; text-transform: uppercase; color: #8e8376; display:block; margin-bottom: 5px;">NUESTROS MOMENTOS</span>
                 <h2 style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.2rem; font-weight: 400; color: #4a453f; margin:0;">Un poco de nuestra historia</h2>
-                <div style="width: 25px; height: 0.5px; background-color: #bcada1; margin: 15px auto 0 auto;"></div>
             </div>
             
             <!-- Fila 3: 3 fotos -->
@@ -566,8 +549,8 @@
                 
                 <div class="form-group" style="margin-bottom: 25px;">
                     <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Servicio de Autobús *</label>
-                    <select name="autobus" id="autobus" style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\
-                        <option value="No necesito autobús">¿Dónde cogerás el autobús?</option>
+                    <select name="autobus" id="autobus" style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%234e463d\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 18px center;">
+                        <option value="No necesito autobús">¿Necesitas plaza de autobús?</option>
                         <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
                         <option value="Sólo Ida">Sólo Ida</option>
                         <option value="Sólo Vuelta">Sólo Vuelta</option>
@@ -592,6 +575,7 @@
         </form>
     </div>
 
+    <!-- SCRIPTS DE ANIMACIÓN Y FUNCIONAMIENTO INTERNO -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         try { 
