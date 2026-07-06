@@ -125,7 +125,7 @@
             text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        /* NUEVO INDICADOR DE FLECHA ULTRA MINIMALISTA */
+        /* INDICADOR DE FLECHA ULTRA MINIMALISTA */
         .flecha-entrar {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.6rem;
@@ -137,7 +137,7 @@
             animation: suavidadParpadeo 2.5s infinite ease-in-out;
         }
 
-        /* Animación refinada de desvanecimiento sutil */
+        /* Animación de desvanecimiento sutil */
         @keyframes suavidadParpadeo {
             0% { opacity: 0.25; }
             50% { opacity: 0.95; }
@@ -295,6 +295,36 @@
             letter-spacing: 0.5px;
         }
 
+        /* NUEVOS ESTILOS ESPECÍFICOS PARA LA HISTORIA */
+        .subtitulo-historia {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: #8e8376;
+            margin-bottom: 15px;
+        }
+        .texto-historia {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            font-size: 1.15rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: #4a453f;
+            max-width: 580px;
+            text-align: justify;
+            margin: 0 auto;
+        }
+        .texto-historia p {
+            font-family: inherit;
+            font-size: inherit;
+            color: inherit;
+            max-width: unset;
+            text-align: inherit;
+            margin-bottom: 20px;
+            text-indent: 25px; /* Sangría refinada en la primera línea */
+        }
+
         .boton {
             display: inline-block; 
             background-color: #4a453f; 
@@ -325,7 +355,7 @@
         
         <div class="linea-separadora"></div>
         
-        <!-- BOTÓN DE INGRESO REDISEÑADO CON FLECHA MINIMALISTA -->
+        <!-- BOTÓN DE INGRESO CON FLECHA MINIMALISTA -->
         <button class="wrapper-entrar" onclick="enterWeb()">
             <span class="text-entrar">Toca para abrir la invitación</span>
             <div class="flecha-entrar">↓</div>
@@ -361,35 +391,45 @@
         </div>
     </div>
 
-    <!-- 3. SECCIONES DE INFORMACIÓN -->
+    <!-- NUEVA SECCIÓN: NUESTRA HISTORIA -->
     <div class="franja franja-blanca">
+        <span class="subtitulo-historia" data-aos="fade-up">Nuestra historia</span>
+        <div class="texto-historia" data-aos="fade-up" data-aos-delay="200">
+            <p>Creemos que Dios tenía un plan para nosotros mucho antes de que lo descubriéramos. Nuestros caminos se cruzaron desde pequeños en el mismo colegio, pero fue años después, cuando volvimos a coincidir como monitores, cuando nuestra historia comenzó de verdad.</p>
+            <p>Alejandro vio a Martina y tuvo claro que quería conocer a esa chica que, sin saberlo, acabaría siendo la mujer de su vida. Con la ayuda de una pequeña cómplice, Alma, mucha labia y un sinfín de excusas para vernos fuera del trabajo, el 22 de diciembre de 2022 descubrimos que estábamos completamente enamorados.</p>
+            <p>Desde entonces hemos construido una relación llena de amor, respeto, risas, viajes, momentos inolvidables y dos familias que ya sentimos como una sola. Hoy, convencidos de que somos el mejor equipo y de que queremos seguir escribiendo esta historia para siempre, damos el paso más importante de nuestras vidas y nos hace muchísima ilusión compartirlo con vosotros.</p>
+        </div>
+    </div>
+
+    <!-- 3. SECCIONES DE INFORMACIÓN -->
+    <div class="franja franja-arena">
         <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
         <p data-aos="fade-up" data-aos-delay="100">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
         <p data-aos="fade-up" data-aos-delay="200"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
         <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Ver ubicación</a>
     </div>
 
-    <div class="franja franja-arena">
+    <div class="franja franja-blanca">
         <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
         <p data-aos="fade-up" data-aos-delay="100">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
         <p data-aos="fade-up" data-aos-delay="200"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
         <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Cómo llegar</a>
     </div>
 
-    <div class="franja franja-blanca">
+    <div class="franja franja-arena">
         <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
         <p data-aos="fade-up" data-aos-delay="100">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
         <p data-aos="fade-up" data-aos-delay="200"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
     </div>
 
-    <div class="franja franja-arena">
+    <div class="franja franja-blanca">
         <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
         <p data-aos="fade-up" data-aos-delay="100">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
         <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="200">Subir Fotos</a>
     </div>
 
     <!-- 4. FORMULARIO DE CONFIRMACIÓN -->
-    <div class="franja franja-blanca" style="background-color: #faf8f5;">
+    <div class="franja franja-arena" style="background-color: #faf8f5;">
         <span style="font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: #8e8376; font-weight: 400; display: block; margin-bottom: 8px;">CONFIRMA TU ASISTENCIA</span>
         <h2 style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 2.4rem; font-weight: 400; color: #4e463d; margin-top: 0; margin-bottom: 35px; letter-spacing: 0;">¿Nos acompañas?</h2>
         
