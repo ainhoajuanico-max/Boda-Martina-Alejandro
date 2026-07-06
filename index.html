@@ -95,7 +95,7 @@
             padding: 20px;
         }
         
-        /* BOTÓN INTERACTIVO REDISEÑADO MAS MINIMALISTA */
+        /* BOTÓN INTERACTIVO COMPLETAMENTE LIMPIO */
         .wrapper-entrar {
             display: flex;
             flex-direction: column;
@@ -120,21 +120,20 @@
             text-transform: uppercase;
             font-weight: 300;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             opacity: 0.85;
             text-shadow: 0 2px 8px rgba(0,0,0,0.3);
         }
 
-        /* ICONO DE MANO NUEVO: ESTILIZADO, FINO Y MINIMALISTA */
-        .icona-ma {
-            width: 28px;
-            height: 28px;
-            fill: none;
-            stroke: #ffffff;
-            stroke-width: 1.2; /* Líneas más finas y elegantes */
-            stroke-linecap: round;
-            stroke-linejoin: round;
+        /* NUEVO INDICADOR DE FLECHA ULTRA MINIMALISTA */
+        .flecha-entrar {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #ffffff;
             opacity: 0.85;
+            line-height: 1;
+            margin: 0;
             animation: suavidadParpadeo 2.5s infinite ease-in-out;
         }
 
@@ -326,14 +325,10 @@
         
         <div class="linea-separadora"></div>
         
-        <!-- BOTÓN DE INGRESO REDISEÑADO CON ICONO MINIMALISTA -->
+        <!-- BOTÓN DE INGRESO REDISEÑADO CON FLECHA MINIMALISTA -->
         <button class="wrapper-entrar" onclick="enterWeb()">
             <span class="text-entrar">Toca para abrir la invitación</span>
-            <svg class="icona-ma" viewBox="0 0 24 24">
-                <!-- Trazo limpio y estilizado de una mano haciendo tap -->
-                <path d="M10.5 6.5v4.5M13.5 8.5v2.5M16.5 10.5v1.5M7.5 10.5V5.5a1.5 1.5 0 0 1 3 0v5M7.5 10.5a5 5 0 0 0 5 5h1a4 4 0 0 0 4-4V10" />
-                <path d="M12 2a3.5 3.5 0 0 0-3.5 3.5" stroke-dasharray="2 2" />
-            </svg>
+            <div class="flecha-entrar">↓</div>
         </button>
     </div>
 
