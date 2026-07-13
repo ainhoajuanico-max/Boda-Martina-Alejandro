@@ -514,33 +514,105 @@
         </div>
 
     </div>
-    
-    <!-- 3. SECCIONES DE INFORMACIÓN -->
-    <div class="franja franja-blanca">
-        <h2 data-aos="fade-up">⛪ La Ceremonia</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Nos encantaría que nos acompañes en el momento del "sí, quiero" en una hermosa iglesia en pleno corazón de Barcelona.</p>
-        <p data-aos="fade-up" data-aos-delay="200"><strong>Hora:</strong> 11:00 h<br><strong>Lugar:</strong> Parroquia de Santa Maria del Remei<br>Plaça de Concòrdia, 1, Les Corts</p>
-        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Ver ubicación</a>
-    </div>
 
-    <div class="franja franja-arena">
-        <h2 data-aos="fade-up">🏡 El Convite y la Fiesta</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Después de la ceremonia, nos trasladaremos a celebrar, brindar y bailar en un entorno mágico rodeado de naturaleza.</p>
-        <p data-aos="fade-up" data-aos-delay="200"><strong>Lugar:</strong> Masia Rosàs<br>Sant Cugat del Vallès, Barcelona</p>
-        <a href="https://maps.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="300">Cómo llegar</a>
-    </div>
+    <!-- SECCIÓN: EL GRAN DÍA (RECUADROS + TIMELINE) -->
+<section id="el-gran-dia" style="background-color: #fcfbf9; padding: 80px 20px; font-family: 'Segoe UI', Arial, sans-serif;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        
+        <!-- ========================================== -->
+        <!-- PARTE 1: RECUADROS DE LOCALIZACIÓN         -->
+        <!-- ========================================== -->
+        <div style="text-align: center; margin-bottom: 40px;">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: #8e8376; display: block; margin-bottom: 10px;">APUNTA LO BIEN</span>
+            <h2 style="font-family: 'Playfair Display', 'Georgia', serif; font-size: 2.4rem; font-weight: 300; font-style: italic; color: #4a453f; margin: 0;">El gran día</h2>
+        </div>
 
-    <div class="franja franja-blanca">
-        <h2 data-aos="fade-up">🚌 Servicio de Autobús</h2>
-        <p data-aos="fade-up" data-aos-delay="100">¡Queremos que lo des todo en la pista! Pondremos a vuestra disposición autobuses para el traslado de ida y vuelta.</p>
-        <p data-aos="fade-up" data-aos-delay="200"><em>* Reserva tu plaza indicándolo en el formulario de abajo.</em></p>
-    </div>
+        <!-- Contenedor de los dos recuadros (Flexbox para que se pongan en paralelo en PC y en vertical en móvil) -->
+        <div class="recuadros-container" style="display: flex; gap: 25px; margin-bottom: 80px; flex-wrap: wrap;">
+            
+            <!-- Recuadro 1: La Ceremonia -->
+            <div style="flex: 1; min-width: 280px; background: #ffffff; border: 1px solid #eee7de; border-radius: 4px; padding: 40px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02);" data-aos="fade-up">
+                <!-- Icono de Iglesia en SVG -->
+                <div style="margin-bottom: 20px; color: #bcae9e;">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M9 5h6M12 8L4 14v8h16v-8z"/><path d="M12 14v8"/></svg>
+                </div>
+                <span style="font-size: 0.8rem; color: #a19588; letter-spacing: 2px;">11:00 H</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #4a453f; margin: 10px 0;">La Ceremonia</h3>
+                <p style="color: #6e665e; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                    <strong>Parroquia de Santa Maria del Remei</strong><br>
+                    Plaça de Concòrdia, 1, Les Corts
+                </p>
+                <a href="https://maps.google.com" target="_blank" style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; color: #8e8376; letter-spacing: 2px; text-decoration: none; border-bottom: 1px solid #8e8376; padding-bottom: 2px; text-transform: uppercase;">VER EN EL MAPA</a>
+            </div>
 
-    <div class="franja franja-arena">
-        <h2 data-aos="fade-up">📸 Comparte tus Recuerdos</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Ayúdanos a capturar cada sonrisa. Sube las fotos y vídeos que hagas durante el gran día.</p>
-        <a href="https://photos.google.com" target="_blank" class="boton" data-aos="fade-up" data-aos-delay="200">Subir Fotos</a>
+            <!-- Recuadro 2: Convite y Fiesta -->
+            <div style="flex: 1; min-width: 280px; background: #ffffff; border: 1px solid #eee7de; border-radius: 4px; padding: 40px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02);" data-aos="fade-up" data-aos-delay="100">
+                <!-- Icono de Masía/Celebración en SVG -->
+                <div style="margin-bottom: 20px; color: #bcae9e;">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M3 22V11l9-7 9 7v11H3z"/><path d="M9 22V14h6v8"/></svg>
+                </div>
+                <span style="font-size: 0.8rem; color: #a19588; letter-spacing: 2px;">A PARTIR DE LAS 13:00 H</span>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #4a453f; margin: 10px 0;">Convite y Fiesta</h3>
+                <p style="color: #6e665e; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
+                    <strong>Masia Rosàs</strong><br>
+                    Sant Cugat del Vallès, Barcelona
+                </p>
+                <a href="https://maps.google.com" target="_blank" style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; color: #8e8376; letter-spacing: 2px; text-decoration: none; border-bottom: 1px solid #8e8376; padding-bottom: 2px; text-transform: uppercase;">VER EN EL MAPA</a>
+            </div>
+
+        </div>
+
+
+        <!-- ========================================== -->
+        <!-- PARTE 2: LÍNEA DE TIEMPO (TIMELINE)        -->
+        <!-- ========================================== -->
+        <div style="text-align: center; margin-bottom: 50px;" data-aos="fade-up">
+            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: #8e8376; display: block; margin-bottom: 10px;">EL ITINERARIO</span>
+            <h2 style="font-family: 'Playfair Display', 'Georgia', serif; font-size: 2.2rem; font-weight: 300; font-style: italic; color: #4a453f; margin: 0;">Cómo será el día</h2>
+        </div>
+
+        <!-- Contenedor del Timeline -->
+        <div class="timeline-container" style="position: relative; padding-left: 45px; max-width: 550px; margin: 0 auto;">
+            
+            <!-- Línea vertical -->
+            <div style="position: absolute; left: 7px; top: 10px; bottom: 10px; width: 1px; background-color: #e2d9cd;"></div>
+
+            <!-- Hito 1 -->
+            <div class="timeline-item" style="position: relative; margin-bottom: 45px;" data-aos="fade-up">
+                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                <span style="font-size: 0.85rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">11:00 H</span>
+                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #4a453f; margin: 4px 0;">Ceremonia</h4>
+                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Parroquia de Santa Maria del Remei</p>
+            </div>
+
+            <!-- Hito 2 -->
+            <div class="timeline-item" style="position: relative; margin-bottom: 45px;" data-aos="fade-up" data-aos-delay="100">
+                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                <span style="font-size: 0.85rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">13:00 H</span>
+                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #4a453f; margin: 4px 0;">Aperitivo</h4>
+                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Masia Rosàs</p>
+            </div>
+
+            <!-- Hito 3 -->
+            <div class="timeline-item" style="position: relative; margin-bottom: 45px;" data-aos="fade-up" data-aos-delay="200">
+                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                <span style="font-size: 0.85rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">15:00 H</span>
+                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #4a453f; margin: 4px 0;">El Convite</h4>
+                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Almuerzo de celebración</p>
+            </div>
+
+            <!-- Hito 4 -->
+            <div class="timeline-item" style="position: relative;" data-aos="fade-up" data-aos-delay="300">
+                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                <span style="font-size: 0.85rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">19:00 H</span>
+                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #4a453f; margin: 4px 0;">La Fiesta 🎉</h4>
+                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">¡A bailar hasta que el cuerpo aguante!</p>
+            </div>
+
+        </div>
+
     </div>
+</section>
 
     <!-- 4. FORMULARIO DE CONFIRMACIÓN -->
     <div class="franja franja-blanca" style="background-color: #faf8f5;">
