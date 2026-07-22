@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
     <title>Martina & Alejandro 14.11.2026</title>
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;1,300&family=Montserrat:wght=200;300;400;500;600&family=Playfair+Display:ital,wght=0,400;1,400&display=swap');
     </style>
@@ -23,7 +24,13 @@
             overflow-x: hidden;
             font-size: 14px;
         }
-
+        .numero-iban, .numero-iban * {
+            text-decoration: none !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+            color: #3a3836 !important;
+            -webkit-text-fill-color: #3a3836 !important;
+        }
         /* ESTILO IBAN PARA MÓVILES Y ORDENADORES */
         .card-iban {
             background-color: rgba(255, 255, 255, 0.7);
@@ -719,7 +726,7 @@
             <span style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #a39382; display: block; margin-bottom: 8px; font-weight: 600;">
                 NÚMERO DE CUENTA (IBAN)
             </span>
-            <strong style="font-family: 'Courier New', Courier, monospace; font-size: clamp(0.78rem, 3.8vw, 1.1rem); letter-spacing: 1px; color: #3a3836 !important; margin-bottom: 15px; display: block; white-space: nowrap !important; -webkit-text-fill-color: #3a3836;">
+            <strong style="font-family: 'Courier New', Courier, monospace; font-size: clamp(0.78rem, 3.8vw, 1.1rem); letter-spacing: 1px; color: #3a3836 !important; margin-bottom: 15px; display: block; white-space: nowrap !important; -webkit-text-fill-color: #3a3836;text-decoration: none !important; border-bottom: none !important; -webkit-text-decorations-in-effect: none !important;">
                 ES54 0182 9003 9302 0717 9891
             </strong>
             <button onclick="copiarIBAN()" id="btn-copiar" style="background-color: #a39382; color: #ffffff; border: none; padding: 7px 16px; border-radius: 20px; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s ease;">
