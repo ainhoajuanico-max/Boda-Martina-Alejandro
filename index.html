@@ -638,43 +638,62 @@
     </div>
 </div>
 
-<!-- Separador de sección estilo plantilla -->
-<div style="text-align: center; margin-top: 50px; margin-bottom: 40px;">
+<!-- Sección El Regalo -->
+<div style="width: 100%; max-width: 800px; margin: 60px auto; padding: 0 20px; text-align: center; box-sizing: border-box;">
     
     <!-- Subtítulo en mayúsculas -->
-    <p style="font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #a39382; font-weight: 500; margin-bottom: 5px;">
+    <p style="font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #a39382; font-weight: 500; margin-bottom: 8px;">
         EL REGALO 🎁
     </p>
 
-    <!-- Título principal en cursiva serif elegante -->
-    <h2 style="font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: normal; font-size: 2.3rem; color: #3a3836; margin-top: 0; margin-bottom: 12px;">
-        Vuestra presencia es lo mejor
+    <!-- Título principal -->
+    <h2 style="font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: normal; font-size: 2.3rem; color: #3a3836; margin: 0 0 12px 0;">
+        Un detalle con nosotros
     </h2>
 
-    <!-- Línea decorativa beige -->
-    <div style="width: 40px; height: 2px; background-color: #cbbba9; margin: 0 auto 30px auto;"></div>
+    <!-- Línea decorativa beige centreada -->
+    <div style="width: 40px; height: 2px; background-color: #cbbba9; margin: 0 auto 25px auto;"></div>
 
-    <!-- Texto explicativo con tipografía limpia y color suave -->
-    <p style="font-family: system-ui, -apple-system, sans-serif; font-size: 0.95rem; color: #66605b; line-height: 1.6; max-width: 500px; margin: 0 auto 30px auto; padding: 0 15px;">
+    <!-- Texto explicativo -->
+    <p style="font-family: system-ui, -apple-system, sans-serif; font-size: 0.95rem; color: #66605b; line-height: 1.6; max-width: 550px; margin: 0 auto 30px auto;">
         Vuestra presencia es el mejor regalo que podemos recibir. Si, además, deseáis tener un detalle con nosotros, os facilitamos nuestro número de cuenta:
     </p>
 
-    <!-- Caja del IBAN con estilo elegante y sutil -->
-    <div style="background-color: rgba(255, 255, 255, 0.6); border: 1px solid #e5ded6; border-radius: 6px; padding: 20px 25px; display: inline-block; box-shadow: 0 2px 10px rgba(0,0,0,0.02); margin-bottom: 25px;">
-        <span style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #a39382; display: block; margin-bottom: 6px; font-weight: 600;">
-            NUMERO DE CUENTA (IBAN)
+    <!-- Caja del IBAN con Botón de Copiar -->
+    <div style="background-color: rgba(255, 255, 255, 0.7); border: 1px solid #e5ded6; border-radius: 8px; padding: 20px 30px; display: inline-flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 2px 10px rgba(0,0,0,0.02); margin: 0 auto 25px auto;">
+        <span style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #a39382; display: block; margin-bottom: 8px; font-weight: 600;">
+            NÚMERO DE CUENTA (IBAN)
         </span>
-        <strong style="font-family: 'Courier New', Courier, monospace; font-size: 1.25rem; letter-spacing: 1.5px; color: #3a3836;">
+        <strong id="iban-text" style="font-family: 'Courier New', Courier, monospace; font-size: 1.25rem; letter-spacing: 1.5px; color: #3a3836; margin-bottom: 12px; display: block;">
             ES54 0182 9003 9302 0717 9891
         </strong>
+        <button onclick="copiarIBAN()" id="btn-copiar" style="background-color: #a39382; color: #ffffff; border: none; padding: 8px 18px; border-radius: 20px; font-size: 0.8rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease;">
+            📋 COPIAR IBAN
+        </button>
     </div>
 
     <!-- Texto de agradecimiento final -->
-    <p style="font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.15rem; color: #524d48; margin-top: 10px;">
+    <p style="font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 1.15rem; color: #524d48; margin-top: 10px; margin-bottom: 0;">
         Muchas gracias por acompañarnos en este día tan especial.
     </p>
 
 </div>
+
+<!-- Script para la función de copiar -->
+<script>
+function copiarIBAN() {
+    var iban = "ES5401829003930207179891";
+    navigator.clipboard.writeText(iban).then(function() {
+        var btn = document.getElementById("btn-copiar");
+        btn.innerText = "¡COPIADO! ✓";
+        btn.style.backgroundColor = "#6b8e23";
+        setTimeout(function() {
+            btn.innerText = "📋 COPIAR IBAN";
+            btn.style.backgroundColor = "#a39382";
+        }, 2500);
+    });
+}
+</script>
 
     <!-- 4. FORMULARIO DE CONFIRMACIÓN -->
     <div class="franja franja-blanca" style="background-color: #faf8f5;">
