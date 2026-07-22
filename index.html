@@ -6,7 +6,7 @@
     <title>Martina & Alejandro 14.11.2026</title>
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;1,300&family=Montserrat:wght=200;300;400;500;600&family=Playfair+Display:ital,wght=0,400;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap');
     </style>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -22,45 +22,46 @@
             scroll-behavior: smooth;
             overflow-x: hidden;
             font-size: 14px;
+            width: 100%;
         }
 
         /* ESTILOS COMPARTIDOS PARA LOS TEXTOS DE PORTADA */
         .iniciales-estilo {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 6rem;
-            font-weight: 300;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
             line-height: 1;
             margin: 0;
-            letter-spacing: -2px;
+            letter-spacing: -1px;
             opacity: 0.95;
             text-shadow: 0 2px 12px rgba(0,0,0,0.2);
             color: #ffffff;
         }
         .iniciales-estilo span {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            font-style: italic;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 300;
             margin: 0 8px;
             vertical-align: middle;
         }
 
         .nombres-estilo {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
             font-size: 1.3rem;
             margin: 15px 0 5px 0;
             letter-spacing: 2px;
-            font-weight: 400;
             opacity: 0.95;
             color: #ffffff;
+            text-transform: uppercase;
         }
 
         .fecha-estilo {
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             letter-spacing: 6px;
             text-transform: uppercase;
-            font-weight: 300;
+            font-weight: 400;
             opacity: 0.85;
             margin: 0;
             color: #ffffff;
@@ -118,7 +119,7 @@
             font-size: 0.7rem;
             letter-spacing: 4px;
             text-transform: uppercase;
-            font-weight: 300;
+            font-weight: 400;
             color: #ffffff;
             margin-bottom: 10px;
             opacity: 0.85;
@@ -127,8 +128,8 @@
 
         /* INDICADOR DE FLECHA ULTRA MINIMALISTA */
         .flecha-entrar {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
             font-weight: 300;
             color: #ffffff;
             opacity: 0.85;
@@ -190,9 +191,9 @@
         }
         .time-box span { 
             display: block; 
-            font-size: 1.5rem; 
-            font-family: 'Cormorant Garamond', serif; 
-            font-weight: 300; 
+            font-size: 1.4rem; 
+            font-family: 'Montserrat', sans-serif; 
+            font-weight: 600; 
             color: #ffffff; 
         }
         .time-box label { 
@@ -218,7 +219,7 @@
             font-size: 0.6rem; 
             text-transform: uppercase;
             letter-spacing: 4px;
-            font-weight: 300;
+            font-weight: 400;
             opacity: 0.8;
             color: #ffffff;
         }
@@ -262,22 +263,25 @@
 
         /* FRANJAS SECCIONES */
         .franja {
+            width: 100%;
             padding: 80px 20px; 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            box-sizing: border-box;
         }
         .franja-blanca { background-color: #fbf9f6; }
         .franja-arena { background-color: #f3eee7; }
+        .franja-regalo { background-color: #f4efe9; }
         
         h2 { 
-            font-family: 'Cormorant Garamond', serif; 
-            font-size: 2.1rem; 
-            font-weight: 300; 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 1.8rem; 
+            font-weight: 700; 
             color: #4a453f;
             margin-bottom: 20px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         .franja-blanca h2::after, .franja-arena h2::after {
             content: ''; display: block; width: 35px; height: 1px;
@@ -300,13 +304,13 @@
             font-size: 0.65rem;
             letter-spacing: 3px;
             text-transform: uppercase;
-            font-weight: 400;
+            font-weight: 600;
             color: #8e8376;
             margin-bottom: 15px;
         }
         .texto-historia {
-            font-family: 'Cormorant Garamond', Georgia, serif;
-            font-size: 1.15rem;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
             font-weight: 300;
             line-height: 1.8;
             color: #4a453f;
@@ -324,7 +328,7 @@
             text-indent: 25px;
         }
 
-        /* ESTILOS DE LA GALERÍA DE FOTOS ASIMÉTRICA */
+        /* ESTILOS DE LA GALERÍA DE FOTOS */
         .galeria-container {
             width: 100%;
             max-width: 900px;
@@ -361,8 +365,8 @@
             min-width: 350px;
             height: 350px;
         }
-        
-        /* Ajuste responsivo impecable y robusto para teléfonos móviles */
+
+        /* Ajuste responsivo para teléfonos */
         @media screen and (max-width: 768px) {
             .galeria-container {
                 padding: 10px;
@@ -385,25 +389,6 @@
                 filter: grayscale(0%);
             }
         }
-
-        .boton {
-            display: inline-block; 
-            background-color: #4a453f; 
-            color: #ffffff !important;
-            padding: 12px 30px; 
-            text-decoration: none; 
-            font-size: 0.65rem; 
-            letter-spacing: 2px; 
-            text-transform: uppercase; 
-            transition: all 0.3s;
-            border: 1px solid #4a453f; 
-            margin-top: 15px;
-            cursor: pointer;
-        }
-        .boton:hover { background-color: transparent; color: #4a453f !important; }
-
-        .exito { background-color: #e6ede0; color: #435b31; border: 1px solid #cce0bc; }
-        .error { background-color: #fbecee; color: #8a3441; border: 1px solid #f3cfd4; }
     </style>
 </head>
 <body>
@@ -450,9 +435,10 @@
             <div class="linea-desplaca"></div>
         </div>
     </div>
+
     <!-- SECCIÓN: NUESTRA HISTORIA -->
     <div class="franja franja-blanca">
-        <span class="subtitulo-historia" data-aos="fade-up">Nuestra historia</span>
+        <span class="subtitulo-historia" data-aos="fade-up">NUESTRA HISTORIA</span>
         <div class="texto-historia" data-aos="fade-up" data-aos-delay="200">
             <p>Creemos que Dios tenía un plan para nosotros mucho antes de que lo descubriéramos. Nuestros caminos se cruzaron desde pequeños en el mismo colegio, pero fue años después, cuando volvimos a coincidir como monitores, cuando nuestra historia comenzó de verdad.</p>
             <p>Alejandro vio a Martina y tuvo claro que quería conocer a esa chica que, sin saberlo, acabaría siendo la mujer de su vida. Con la ayuda de una pequeña cómplice, Alma, mucha labia y un sinfín de excusas para vernos fuera del trabajo, el 22 de diciembre de 2022 descubrimos que estábamos completamente enamorados.</p>
@@ -460,421 +446,220 @@
         </div>
     </div>
 
-    <!-- SECCIÓN DE IMÁGENES POR FILAS CON PATRÓN ALTERNO -->
-    <div class="franja franja-arena" style="padding-top:60px; padding-bottom:60px;">
-        
+    <!-- SECCIÓN DE IMÁGENES -->
+    <div class="franja franja-arena">
         <div class="galeria-container">
-            <!-- SECCIÓ 1: Abans del títol -->
-            <!-- Fila 1: 3 fotos -->
             <div class="fila-fotos" data-aos="fade-up">
                 <img src="foto1.jpg" alt="Moment" class="foto patron-3">
                 <img src="foto2.jpg" alt="Moment" class="foto patron-3">
                 <img src="foto3.jpg" alt="Moment" class="foto patron-3">
             </div>
-            
-            <!-- Fila 2: 2 fotos -->
             <div class="fila-fotos" data-aos="fade-up" data-aos-delay="100">
                 <img src="foto4.jpg" alt="Moment" class="foto patron-2">
                 <img src="foto5.jpg" alt="Moment" class="foto patron-2">
             </div>
-            
-            <!-- Fila 3: 3 fotos -->
             <div class="fila-fotos" data-aos="fade-up" data-aos-delay="200">
                 <img src="foto6.jpg" alt="Moment" class="foto patron-3">
                 <img src="foto7.jpg" alt="Moment" class="foto patron-3">
                 <img src="foto8.jpg" alt="Moment" class="foto patron-3">
             </div>
             
-            <!-- TÍTULO INTERMEDIO CENTRAL LIMPIO (Mantenint el teu estil exacte) -->
             <div style="margin: 55px auto 45px auto; text-align:center;" data-aos="fade-up">
-                <span style="font-family: 'Montserrat', sans-serif; font-size: 0.6rem; letter-spacing: 4px; text-transform: uppercase; color: #8e8376; display:block; margin-bottom: 5px;">NUESTROS MOMENTOS</span>
-                <h2 style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.2rem; font-weight: 400; color: #4a453f; margin:0;">Un poco de nuestra historia</h2>
+                <span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; color: #8e8376; display:block; margin-bottom: 8px;">NUESTROS MOMENTOS</span>
+                <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; color: #4a453f; margin:0;">Un poco de nuestra historia</h2>
             </div>
             
-            <!-- SECCIÓ 2: Després del títol -->
-            <!-- Fila 4: 3 fotos -->
             <div class="fila-fotos" data-aos="fade-up" data-aos-delay="100">
                 <img src="foto9.jpg" alt="Moment" class="foto patron-3">
                 <img src="foto10.jpg" alt="Moment" class="foto patron-3">
                 <img src="foto11.jpg" alt="Moment" class="foto patron-3">
             </div>
-            
-            <!-- Fila 5: 2 fotos -->
             <div class="fila-fotos" data-aos="fade-up" data-aos-delay="200">
                 <img src="foto12.jpg" alt="Moment" class="foto patron-2">
                 <img src="foto13.jpg" alt="Moment" class="foto patron-2">
             </div>
-            
-            <!-- Fila 6: 3 fotos -->
             <div class="fila-fotos" data-aos="fade-up" data-aos-delay="300">
                 <img src="foto14.jpg" alt="Moment" class="foto patron-3">
                 <img src="foto15.jpg" alt="Moment" class="foto patron-3">
                 <img src="foto16.jpg" alt="Moment" class="foto patron-3">
             </div>
         </div>
-
     </div>
 
-<!-- SECCIÓN: EL GRAN DÍA (RECUADROS CON ICONOS DE COLOR + TIMELINE) -->
-<div class="franja franja-blanca" style="background-color: #fcfbf9; padding: 80px 20px; font-family: 'Segoe UI', Arial, sans-serif;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        
-        <!-- ========================================== -->
-        <!-- PARTE 1: RECUADROS DE LOCALIZACIÓN         -->
-        <!-- ========================================== -->
-        <div style="text-align: center; margin-bottom: 40px;">
-            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: #8e8376; display: block; margin-bottom: 10px;">APÚNTALO BIEN</span>
-            <h2 style="font-family: 'Playfair Display', 'Georgia', serif; font-size: 2.4rem; font-weight: 300; font-style: italic; color: #4a453f; margin: 0;">El gran día</h2>
-        </div>
-
-        <!-- Contenedor de los dos recuadros -->
-        <div class="recuadros-container" style="display: flex; gap: 25px; margin-bottom: 80px; flex-wrap: wrap;">
+    <!-- SECCIÓN: EL GRAN DÍA -->
+    <div class="franja franja-blanca">
+        <div style="max-width: 800px; width: 100%; margin: 0 auto;">
             
-            <!-- Recuadro 1: La Ceremonia -->
-            <div style="flex: 1; min-width: 280px; background: #ffffff; border: 1px solid #eee7de; border-radius: 4px; padding: 40px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02);" data-aos="fade-up">
-                <!-- Icono de Iglesia de Color (Emoji Estilizado) -->
-                <div style="font-size: 3.2rem; margin-bottom: 15px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06)); line-height: 1;">
-                    💒
-                </div>
-                <span style="font-size: 0.8rem; color: #a19588; letter-spacing: 2px;">11:00 H</span>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #4a453f; margin: 10px 0;">La Ceremonia</h3>
-                <p style="color: #6e665e; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-                    <strong>Parroquia de Santa Maria del Remei</strong><br>
-                    Plaça de Concòrdia, 1, Les Corts
-                </p>
-                <a href="https://maps.google.com/?q=Parroquia+de+Santa+Maria+del+Remei+Placa+de+Concordia+1+Barcelona" target="_blank" style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; color: #8e8376; letter-spacing: 2px; text-decoration: none; border-bottom: 1px solid #8e8376; padding-bottom: 2px; text-transform: uppercase;">VER EN EL MAPA</a>
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; color: #8e8376; display: block; margin-bottom: 8px;">APÚNTALO BIEN</span>
+                <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 700; color: #4a453f; margin: 0;">El gran día</h2>
             </div>
 
-            <!-- Recuadro 2: Convite y Fiesta -->
-            <div style="flex: 1; min-width: 280px; background: #ffffff; border: 1px solid #eee7de; border-radius: 4px; padding: 40px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02);" data-aos="fade-up" data-aos-delay="100">
-                <!-- Icono de Fiesta/Brindis de Color (Emojis Estilizados) -->
-                <div style="font-size: 3.2rem; margin-bottom: 15px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.06)); line-height: 1;">
-                    ⛪💍
-                </div>
-                <span style="font-size: 0.8rem; color: #a19588; letter-spacing: 2px;">A PARTIR DE LAS 12:30 H</span>
-                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 400; color: #4a453f; margin: 10px 0;">Convite y Fiesta</h3>
-                <p style="color: #6e665e; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">
-                    <strong>Masia Rosàs</strong><br>
-                    Sant Cugat del Vallès, Barcelona
-                </p>
-                <a href="https://maps.google.com/?q=Masia+Rosas+Sant+Cugat+del+Valles" target="_blank" style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; color: #8e8376; letter-spacing: 2px; text-decoration: none; border-bottom: 1px solid #8e8376; padding-bottom: 2px; text-transform: uppercase;">VER EN EL MAPA</a>
-            </div>
-
-        </div>
-
-
-        <!-- ========================================== -->
-        <!-- PARTE 2: LÍNEA DE TIEMPO (TIMELINE)        -->
-        <!-- ========================================== -->
-        <div style="text-align: center; margin-bottom: 50px;" data-aos="fade-up">
-            <span style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: #8e8376; display: block; margin-bottom: 10px;">EL ITINERARIO</span>
-            <h2 style="font-family: 'Playfair Display', 'Georgia', serif; font-size: 2.2rem; font-weight: 300; font-style: italic; color: #4a453f; margin: 0;">Cómo será el día</h2>
-        </div>
-
-        <!-- Contenedor del Timeline -->
-        <div class="timeline-container" style="position: relative; padding-left: 45px; max-width: 550px; margin: 0 auto;">
-            
-            <!-- Línea vertical de fondo -->
-            <div style="position: absolute; left: 7px; top: 10px; bottom: 10px; width: 1px; background-color: #e2d9cd;"></div>
-
-            <!-- Hito 1 -->
-            <div class="timeline-item" style="position: relative; margin-bottom: 40px;" data-aos="fade-up">
-                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
-                <span style="font-size: 0.85rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">11:00 H</span>
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; color: #4a453f; margin: 4px 0;">Ceremonia</h4>
-                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Celebración religiosa en la Parroquia</p>
-            </div>
-
-            <!-- Hito 2 -->
-            <div class="timeline-item" style="position: relative; margin-bottom: 40px;" data-aos="fade-up" data-aos-delay="50">
-                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
-                <span style="font-size: 0.85rem; color: #bcae9e; letter-spacing: 2px; font-weight: 600;">12:00 H</span>
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; color: #4a453f; margin: 4px 0;">Salida de los novios 🚌</h4>
-                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Salida de los autocares hacia Masía Rosàs</p>
-            </div>
-
-            <!-- Hito 3 -->
-            <div class="timeline-item" style="position: relative; margin-bottom: 40px;" data-aos="fade-up" data-aos-delay="100">
-                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
-                <span style="font-size: 0.85rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">12:30 H – 13:00 H</span>
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; color: #4a453f; margin: 4px 0;">Llegada a Masía Rosàs</h4>
-                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Bienvenida a los jardines de la finca</p>
-            </div>
-
-            <!-- Hito 4 -->
-            <div class="timeline-item" style="position: relative; margin-bottom: 40px;" data-aos="fade-up" data-aos-delay="150">
-                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
-                <span style="font-size: 0.85rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">13:00 H – 15:00 H</span>
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; color: #4a453f; margin: 4px 0;">Aperitivo</h4>
-                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Cóctel de bienvenida y celebración</p>
-            </div>
-
-            <!-- Hito 5 -->
-            <div class="timeline-item" style="position: relative; margin-bottom: 40px;" data-aos="fade-up" data-aos-delay="200">
-                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
-                <span style="font-size: 0.85rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">15:00 H – 17:00 H</span>
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; color: #4a453f; margin: 4px 0;">Banquete</h4>
-                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Comida y grandes sorpresas</p>
-            </div>
-
-            <!-- Hito 6 -->
-            <div class="timeline-item" style="position: relative; margin-bottom: 40px;" data-aos="fade-up" data-aos-delay="250">
-                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
-                <span style="font-size: 0.85rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">17:30 H</span>
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; color: #4a453f; margin: 4px 0;">¡Empieza la fiesta! 🥂</h4>
-                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Baile, barra libre y muchas ganas de celebrar juntos</p>
-            </div>
-
-            <!-- Hito 7 -->
-            <div class="timeline-item" style="position: relative;" data-aos="fade-up" data-aos-delay="300">
-                <div style="position: absolute; left: -45px; top: 5px; width: 15px; height: 15px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
-                <span style="font-size: 0.85rem; color: #bcae9e; letter-spacing: 2px; font-weight: 600;">00:00 H</span>
-                <h4 style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 400; color: #4a453f; margin: 4px 0;">Fin de la fiesta 🚌</h4>
-                <p style="color: #6e665e; font-size: 0.95rem; margin: 0;">Salida de los autocares de vuelta</p>
-            </div>
-
-        </div>
-
-    </div>
-</div>
-
-<!-- Cierres de seguridad para salir de contenedores anteriores desalineados -->
-</div></div>
-
-<!-- Sección El Regalo (Fondo y Contenido 100% Centrados) -->
-<section style="background-color: #f4efe9 !important; width: 100vw !important; relative: position; left: 50%; right: 50%; margin-left: -50vw !important; margin-right: -50vw !important; padding: 70px 20px !important; box-sizing: border-box !important; text-align: center !important; clear: both !important;">
-    <div style="max-width: 600px !important; margin: 0 auto !important; text-align: center !important; float: none !important;">
-        
-        <!-- Emoji de regalo -->
-        <div style="font-size: 2rem; margin-bottom: 10px; line-height: 1;">
-            🎁
-        </div>
-
-        <!-- Subtítulo en mayúsculas -->
-        <p style="font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: #a39382; font-weight: 500; margin-bottom: 8px; text-align: center !important;">
-            VUESTRA PRESENCIA
-        </p>
-
-        <!-- Título principal -->
-        <h2 style="font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif; font-style: italic; font-weight: normal; font-size: 2.3rem; color: #3a3836; margin: 0 0 12px 0 !important; text-align: center !important;">
-            El mejor regalo es tenerte cerca
-        </h2>
-
-        <!-- Línea decorativa beige centreada -->
-        <div style="width: 40px; height: 2px; background-color: #cbbba9; margin: 0 auto 25px auto !important;"></div>
-
-        <!-- Texto explicativo -->
-        <p style="font-family: system-ui, -apple-system, sans-serif; font-size: 0.95rem; color: #66605b; line-height: 1.6; margin: 0 auto 25px auto !important; max-width: 520px; text-align: center !important;">
-            Vuestra presencia es el mejor regalo que podemos recibir. Si, además, deseáis tener un detalle con nosotros, os facilitamos nuestro número de cuenta:
-        </p>
-
-        <!-- Caja del IBAN destacada en blanco -->
-        <div style="background-color: #ffffff; border: 1px solid #e2d8cd; border-radius: 8px; padding: 22px 25px; display: inline-block !important; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin: 0 auto 25px auto !important; text-align: center !important;">
-            <span style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #a39382; display: block; margin-bottom: 8px; font-weight: 600;">
-                NÚMERO DE CUENTA (IBAN)
-            </span>
-            <strong style="font-family: 'Courier New', Courier, monospace; font-size: 1.2rem; letter-spacing: 1.5px; color: #3a3836; margin-bottom: 15px; display: block;">
-                ES54 0182 9003 9302 0717 9891
-            </strong>
-            <button onclick="copiarIBAN()" id="btn-copiar" style="background-color: #a39382; color: #ffffff; border: none; padding: 7px 16px; border-radius: 20px; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s ease;">
-                COPIAR IBAN
-            </button>
-        </div>
-
-        <!-- Texto final -->
-        <p style="font-family: system-ui, -apple-system, sans-serif; font-size: 0.95rem; color: #66605b; line-height: 1.6; margin: 0 auto !important; max-width: 520px; text-align: center !important;">
-            Muchas gracias por acompañarnos en este día tan especial.
-        </p>
-
-    </div>
-</section>
-
-<!-- Abre de nuevo los dos cierres para no romper el resto de la web abajo -->
-<div><div>
-
-<!-- Script para la función de copiar -->
-<script>
-function copiarIBAN() {
-    var iban = "ES5401829003930207179891";
-    navigator.clipboard.writeText(iban).then(function() {
-        var btn = document.getElementById("btn-copiar");
-        btn.innerText = "COPIADO";
-        btn.style.opacity = "0.7";
-        setTimeout(function() {
-            btn.innerText = "COPIAR IBAN";
-            btn.style.opacity = "1";
-        }, 2000);
-    });
-}
-</script>
-
-    <!-- 4. FORMULARIO DE CONFIRMACIÓN -->
-    <div class="franja franja-blanca" style="background-color: #faf8f5;">
-        <span style="font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: #8e8376; font-weight: 400; display: block; margin-bottom: 8px;">CONFIRMA TU ASISTENCIA</span>
-        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 2.4rem; font-weight: 400; color: #4e463d; margin-top: 0; margin-bottom: 35px; letter-spacing: 0;">¿Nos acompañas?</h2>
-        
-        <form class="form-rsvp" id="rsvpForm" onsubmit="enviarFormulario(event)" style="text-align: left; background: transparent; padding: 0; margin-top: 15px; border: none; width: 100%; max-width: 550px;">
-            
-            <div class="form-group" style="margin-bottom: 25px;">
-                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Nombre y Apellidos *</label>
-                <input type="text" name="nombre" id="nombre" placeholder="Tu nombre completo" required style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
-            </div>
-            
-            <div class="form-group" style="margin-bottom: 25px;">
-                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Asistirás? *</label>
-                <select name="asistencia" id="asistencia" required onchange="checkAsistencia(this.value)" style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%234e463d\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 18px center;">
-                    <option value="">Selecciona una opción</option>
-                    <option value="Sí, asistiré con mucho gusto">¡Sí, claro! Allí estaré</option>
-                    <option value="No podré asistir">Lamentablemente no podré ir</option>
-                </select>
-            </div>
-            
-            <div id="detallesAsistencia">
-                <div class="form-group" style="margin-bottom: 25px;">
-                    <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Alguna alergia o intolerancia alimentaria?</label>
-                    <input type="text" name="alergias" id="alergias" placeholder="Gluten, lactosa, frutos secos..." style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
-                </div>
+            <!-- Recuadros -->
+            <div style="display: flex; gap: 25px; margin-bottom: 80px; flex-wrap: wrap; justify-content: center;">
                 
-                <div class="form-group" style="margin-bottom: 25px;">
-                    <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">Servicio de Autobús *</label>
-                    <select name="autobus" id="autobus" style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d; appearance: none; -webkit-appearance: none; background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'12\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%234e463d\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'><polyline points=\'6 9 12 15 18 9\'></polyline></svg>'); background-repeat: no-repeat; background-position: right 18px center;">
-                        <option value="No necesito autobús">¿Necesitas plaza de autobús?</option>
-                        <option value="Sí, ida y vuelta">Sí, ida y vuelta</option>
-                        <option value="Sólo Ida">Sólo Ida</option>
-                        <option value="Sólo Vuelta">Sólo Vuelta</option>
-                        <option value="No necesito autobús">No lo necesito (voy por mi cuenta)</option>
-                    </select>
+                <div style="flex: 1; min-width: 280px; max-width: 380px; background: #ffffff; border: 1px solid #eee7de; border-radius: 4px; padding: 40px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02);" data-aos="fade-up">
+                    <div style="font-size: 3.2rem; margin-bottom: 15px; line-height: 1;">💒</div>
+                    <span style="font-size: 0.75rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">11:00 H</span>
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; color: #4a453f; margin: 10px 0;">La Ceremonia</h3>
+                    <p style="color: #6e665e; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                        <strong>Parroquia de Santa Maria del Remei</strong><br>
+                        Plaça de Concòrdia, 1, Les Corts
+                    </p>
+                    <a href="https://maps.google.com/?q=Parroquia+de+Santa+Maria+del+Remei+Placa+de+Concordia+1+Barcelona" target="_blank" style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 600; color: #8e8376; letter-spacing: 2px; text-decoration: none; border-bottom: 1px solid #8e8376; padding-bottom: 2px; text-transform: uppercase;">VER EN EL MAPA</a>
+                </div>
+
+                <div style="flex: 1; min-width: 280px; max-width: 380px; background: #ffffff; border: 1px solid #eee7de; border-radius: 4px; padding: 40px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02);" data-aos="fade-up" data-aos-delay="100">
+                    <div style="font-size: 3.2rem; margin-bottom: 15px; line-height: 1;">⛪💍</div>
+                    <span style="font-size: 0.75rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">A PARTIR DE LAS 12:30 H</span>
+                    <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; font-weight: 700; color: #4a453f; margin: 10px 0;">Convite y Fiesta</h3>
+                    <p style="color: #6e665e; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px;">
+                        <strong>Masia Rosàs</strong><br>
+                        Sant Cugat del Vallès, Barcelona
+                    </p>
+                    <a href="https://maps.google.com/?q=Masia+Rosas+Sant+Cugat+del+Valles" target="_blank" style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 600; color: #8e8376; letter-spacing: 2px; text-decoration: none; border-bottom: 1px solid #8e8376; padding-bottom: 2px; text-transform: uppercase;">VER EN EL MAPA</a>
+                </div>
+
+            </div>
+
+            <!-- Timeline -->
+            <div style="text-align: center; margin-bottom: 50px;" data-aos="fade-up">
+                <span style="font-family: 'Montserrat', sans-serif; font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; color: #8e8376; display: block; margin-bottom: 8px;">EL ITINERARIO</span>
+                <h2 style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 700; color: #4a453f; margin: 0;">Cómo será el día</h2>
+            </div>
+
+            <div style="position: relative; padding-left: 30px; max-width: 500px; margin: 0 auto; text-align: left;">
+                <div style="position: absolute; left: 7px; top: 10px; bottom: 10px; width: 1px; background-color: #e2d9cd;"></div>
+
+                <div style="position: relative; margin-bottom: 35px;" data-aos="fade-up">
+                    <div style="position: absolute; left: -30px; top: 5px; width: 13px; height: 13px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                    <span style="font-size: 0.75rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">11:00 H</span>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600; color: #4a453f; margin: 2px 0;">Ceremonia</h4>
+                    <p style="color: #6e665e; font-size: 0.85rem; margin: 0;">Celebración religiosa en la Parroquia</p>
+                </div>
+
+                <div style="position: relative; margin-bottom: 35px;" data-aos="fade-up">
+                    <div style="position: absolute; left: -30px; top: 5px; width: 13px; height: 13px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                    <span style="font-size: 0.75rem; color: #bcae9e; letter-spacing: 2px; font-weight: 600;">12:00 H</span>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600; color: #4a453f; margin: 2px 0;">Salida de los novios 🚌</h4>
+                    <p style="color: #6e665e; font-size: 0.85rem; margin: 0;">Salida de los autocares hacia Masía Rosàs</p>
+                </div>
+
+                <div style="position: relative; margin-bottom: 35px;" data-aos="fade-up">
+                    <div style="position: absolute; left: -30px; top: 5px; width: 13px; height: 13px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                    <span style="font-size: 0.75rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">12:30 H – 13:00 H</span>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600; color: #4a453f; margin: 2px 0;">Llegada a Masía Rosàs</h4>
+                    <p style="color: #6e665e; font-size: 0.85rem; margin: 0;">Bienvenida a los jardines de la finca</p>
+                </div>
+
+                <div style="position: relative; margin-bottom: 35px;" data-aos="fade-up">
+                    <div style="position: absolute; left: -30px; top: 5px; width: 13px; height: 13px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                    <span style="font-size: 0.75rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">13:00 H – 15:00 H</span>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600; color: #4a453f; margin: 2px 0;">Aperitivo</h4>
+                    <p style="color: #6e665e; font-size: 0.85rem; margin: 0;">Cóctel de bienvenida y celebración</p>
+                </div>
+
+                <div style="position: relative; margin-bottom: 35px;" data-aos="fade-up">
+                    <div style="position: absolute; left: -30px; top: 5px; width: 13px; height: 13px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                    <span style="font-size: 0.75rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">15:00 H – 17:00 H</span>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600; color: #4a453f; margin: 2px 0;">Banquete</h4>
+                    <p style="color: #6e665e; font-size: 0.85rem; margin: 0;">Comida y grandes sorpresas</p>
+                </div>
+
+                <div style="position: relative; margin-bottom: 35px;" data-aos="fade-up">
+                    <div style="position: absolute; left: -30px; top: 5px; width: 13px; height: 13px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                    <span style="font-size: 0.75rem; color: #a19588; letter-spacing: 2px; font-weight: 600;">17:30 H</span>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600; color: #4a453f; margin: 2px 0;">¡Empieza la fiesta! 🥂</h4>
+                    <p style="color: #6e665e; font-size: 0.85rem; margin: 0;">Baile, barra libre y muchas ganas de celebrar juntos</p>
+                </div>
+
+                <div style="position: relative;" data-aos="fade-up">
+                    <div style="position: absolute; left: -30px; top: 5px; width: 13px; height: 13px; background-color: #fcfbf9; border: 1px solid #c2b6a8; border-radius: 50%;"></div>
+                    <span style="font-size: 0.75rem; color: #bcae9e; letter-spacing: 2px; font-weight: 600;">00:00 H</span>
+                    <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.1rem; font-weight: 600; color: #4a453f; margin: 2px 0;">Fin de la fiesta 🚌</h4>
+                    <p style="color: #6e665e; font-size: 0.85rem; margin: 0;">Salida de los autocares de vuelta</p>
                 </div>
             </div>
 
-            <div class="form-group" style="margin-bottom: 25px;">
-                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Qué canción no puede faltar en la fiesta? *</label>
-                <input type="text" name="cancion" id="cancion" placeholder="¡Tu canción favorita!" style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d;">
-            </div>
-
-            <div class="form-group" style="margin-bottom: 30px;">
-                <label style="display: block; font-size: 0.65rem; font-weight: 600; margin-bottom: 8px; color: #2c2a27; letter-spacing: 2px; text-transform: uppercase;">¿Un mensaje para los novios?</label>
-                <textarea name="acompanantes" id="acompanantes" rows="4" placeholder="Escribe tu mensaje..." style="width: 100%; padding: 14px 18px; border: none; border-radius: 6px; background-color: #f1ede7; font-size: 0.85rem; font-family: 'Montserrat', sans-serif; color: #4e463d; resize: vertical; vertical-align: top;"></textarea>
-            </div>
-            
-            <button type="submit" id="btn-enviar" style="width: 100%; background-color: transparent; color: #4e463d; padding: 16px; text-decoration: none; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; font-weight: 500; transition: all 0.3s; border: 1px solid #4e463d; cursor: pointer; display: block; text-align: center;">Enviar Confirmación</button>
-            
-            <div id="mensaje-estado" style="display: none; padding: 12px; margin-top: 20px; text-align: center; font-size: 0.8rem; border-radius: 6px; font-family: 'Montserrat', sans-serif;"></div>
-        </form>
+        </div>
     </div>
 
-    <!-- SCRIPTS DE ANIMACIÓN Y FUNCIONAMIENTO INTERNO -->
+    <!-- SECCIÓN: EL REGALO -->
+    <div class="franja franja-regalo">
+        <div style="max-width: 600px; width: 100%; margin: 0 auto; text-align: center;">
+            
+            <div style="font-size: 2rem; margin-bottom: 10px; line-height: 1;">🎁</div>
+
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: #a39382; font-weight: 600; margin: 0 auto 8px auto;">
+                VUESTRA PRESENCIA
+            </p>
+
+            <h2 style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2rem; color: #3a3836; margin: 0 0 12px 0;">
+                El mejor regalo es tenerte cerca
+            </h2>
+
+            <div style="width: 40px; height: 2px; background-color: #cbbba9; margin: 0 auto 25px auto;"></div>
+
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #66605b; line-height: 1.6; margin: 0 auto 25px auto; max-width: 520px;">
+                Vuestra presencia es el mejor regalo que podemos recibir. Si, además, deseáis tener un detalle con nosotros, os facilitamos nuestro número de cuenta:
+            </p>
+
+            <div style="background-color: #ffffff; border: 1px solid #e2d8cd; border-radius: 8px; padding: 22px 25px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin: 0 auto 25px auto;">
+                <span style="font-family: 'Montserrat', sans-serif; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #a39382; display: block; margin-bottom: 8px; font-weight: 600;">
+                    NÚMERO DE CUENTA (IBAN)
+                </span>
+                <strong style="font-family: 'Courier New', Courier, monospace; font-size: 1.15rem; letter-spacing: 1.5px; color: #3a3836; margin-bottom: 15px; display: block;">
+                    ES54 0182 9003 9302 0717 9891
+                </strong>
+                <button onclick="copiarIBAN()" id="btn-copiar" style="font-family: 'Montserrat', sans-serif; font-weight: 600; background-color: #a39382; color: #ffffff; border: none; padding: 10px 20px; border-radius: 20px; font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer; transition: opacity 0.2s ease;">
+                    COPIAR IBAN
+                </button>
+            </div>
+
+            <p style="font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: #66605b; line-height: 1.6; margin: 0 auto; max-width: 520px;">
+                Muchas gracias por acompañarnos en este día tan especial.
+            </p>
+
+        </div>
+    </div>
+
+    <!-- SCRIPTS DE FUNCIONALIDAD -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        try { 
-            AOS.init({ duration: 1200, once: true }); 
-        } catch(e) { 
-            console.log("Error cargando AOS:", e); 
-        }
-
-        var music = document.getElementById("bgMusic");
-        var musicPlayer = document.getElementById("musicPlayer");
-        var musicIcon = document.getElementById("musicIcon");
+        AOS.init({ duration: 1000, once: true });
 
         function enterWeb() {
-            var splash = document.getElementById("splash-screen");
-            if (splash) {
-                splash.style.opacity = "0";
-                setTimeout(function() {
-                    splash.style.visibility = "hidden";
-                }, 800);
-            }
-
-            if (musicPlayer) musicPlayer.style.display = "flex";
-            if (music) {
-                music.play().then(function() {
-                    musicIcon.innerText = "||";
-                }).catch(function(error) {
-                    console.log("Reproducción bloqueada automáticamente por el navegador.");
-                    musicIcon.innerText = "►";
-                });
-            }
+            document.getElementById('splash-screen').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('splash-screen').style.display = 'none';
+                document.getElementById('musicPlayer').style.display = 'flex';
+                var audio = document.getElementById('bgMusic');
+                if (audio) { audio.play().catch(e => console.log(e)); }
+            }, 800);
         }
 
         function toggleMusic() {
-            if (!music || !musicIcon) return;
-            if (music.paused) {
-                music.play();
-                musicIcon.innerText = "||";
+            var audio = document.getElementById('bgMusic');
+            var icon = document.getElementById('musicIcon');
+            if (audio.paused) {
+                audio.play();
+                icon.innerText = "||";
             } else {
-                music.pause();
-                musicIcon.innerText = "►";
+                audio.pause();
+                icon.innerText = "▶";
             }
         }
 
-        var targetDate = new Date("Nov 14, 2026 11:00:00").getTime();
-
-        var countdownInterval = setInterval(function() {
-            var now = new Date().getTime();
-            var difference = targetDate - now;
-
-            if (difference < 0) {
-                clearInterval(countdownInterval);
-                document.getElementById("days").innerText = "00";
-                document.getElementById("hours").innerText = "00";
-                document.getElementById("minutes").innerText = "00";
-                document.getElementById("seconds").innerText = "00";
-                return;
-            }
-
-            var days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            if(document.getElementById("days")) document.getElementById("days").innerText = days < 10 ? "0" + days : days;
-            if(document.getElementById("hours")) document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
-            if(document.getElementById("minutes")) document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
-            if(document.getElementById("seconds")) document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
-        }, 1000);
-
-        function checkAsistencia(value) {
-            var detalles = document.getElementById("detallesAsistencia");
-            if (detalles) {
-                detalles.style.display = (value === "No podré asistir") ? "none" : "block";
-            }
-        }
-
-        function enviarFormulario(event) {
-            event.preventDefault();
-            var boton = document.getElementById("btn-enviar");
-            var estado = document.getElementById("mensaje-estado");
-            var form = document.getElementById("rsvpForm");
-            if(!boton || !form || !estado) return;
-            
-            boton.innerText = "ENVIANDO RESPUESTA...";
-            boton.disabled = true;
-            
-            var urlScript = "https://script.google.com/macros/s/AKfycbwXBIgu4I_CdNWh6pPG7wJhAIukxxuC2yCIPp8AbiNQIuec39ttt3URtvIM_d_huu28MA/exec";
-            var datos = new URLSearchParams(new FormData(form));
-            
-            fetch(urlScript, {
-                method: 'POST',
-                body: datos.toString(),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                mode: 'no-cors' 
-            })
-            .then(function() {
-                estado.innerText = "¡Tu respuesta se ha guardado correctamente. Muchas gracias! ✨";
-                estado.className = "exito";
-                estado.style.display = "block";
-                boton.innerText = "¡CONFIRMADO!";
-                form.reset();
-                var divDetalles = document.getElementById("detallesAsistencia");
-                if(divDetalles) divDetalles.style.display = "block";
-            })
-            .catch(function(error) {
-                console.error("Error:", error);
-                estado.innerText = "Ha ocurrido un problema temporal. Por favor, vuelve a intentarlo.";
-                estado.className = "error";
-                estado.style.display = "block";
-                boton.disabled = false;
-                boton.innerText = "Enviar Confirmación";
+        function copiarIBAN() {
+            var iban = "ES5401829003930207179891";
+            navigator.clipboard.writeText(iban).then(function() {
+                var btn = document.getElementById("btn-copiar");
+                btn.innerText = "COPIADO";
+                btn.style.opacity = "0.7";
+                setTimeout(function() {
+                    btn.innerText = "COPIAR IBAN";
+                    btn.style.opacity = "1";
+                }, 2000);
             });
         }
     </script>
